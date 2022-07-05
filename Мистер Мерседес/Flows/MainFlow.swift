@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class MainFlow {
     
     var tabBarController: UITabBarController?
@@ -21,12 +20,6 @@ class MainFlow {
         guard let carListNavController = carListNavController else {return}
         
         _ = CarsListFlow(navController: carListNavController)
-    }
-    
-    func start() {
-        
-        
-        
     }
 }
 

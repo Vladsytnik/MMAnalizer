@@ -9,7 +9,7 @@ import UIKit
 
 class CarsListViewController: UIViewController {
     
-    var viewModel: CarsListViewModel
+    let viewModel: CarsListViewModel
     let carsListView = CarsListView()
     
     init(viewModel: CarsListViewModel) {
@@ -29,28 +29,35 @@ class CarsListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.title = "Автомобили"
-        view = carsListView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        carsListView.addConstraints()
+    override func loadView() {
+        view = carsListView
     }
 }
 
+// MARK: - TableViewDataSource
 extension CarsListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        50
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = "test"
+        cell?.imageView?.image = UIImage(systemName: "car")
         return cell ?? UITableViewCell()
     }
 }
 
+// MARK: - TableViewDelegate
 extension CarsListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
+    }
 }
 
 

@@ -18,7 +18,6 @@ class Coordinator {
         self.tabBarController = tabBarController
         
         self.mainFlow = MainFlow(tabBar: tabBarController)
-        mainFlow.start()
     }
 }
 

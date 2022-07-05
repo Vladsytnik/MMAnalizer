@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class CarsListFlow {
     
     var carsListViewController: CarsListViewController
@@ -20,13 +19,21 @@ class CarsListFlow {
         self.navController = navController
         
         self.carsListViewModel = CarsListViewModel()
-        self.carsListViewController = CarsListViewController(viewModel: carsListViewModel)
+        self.carsListViewController = CarsListViewController(
+            viewModel: carsListViewModel
+        )
         
         start()
+        configureNavigationController()
     }
-    
+}
+
+extension CarsListFlow {
     func start() {
         navController.append(viewController: carsListViewController)
     }
     
+    func configureNavigationController() {
+        navController.navigationBar.prefersLargeTitles = true
+    }
 }

@@ -78,7 +78,7 @@
 			children = (
 				0197B7EC28744DE4004F767C /* Extensions */,
 				0197B7F1287458AD004F767C /* Coordinator */,
-				0197B7F92874601A004F767C /* MainFlow */,
+				0197B7F92874601A004F767C /* Flows */,
 				0197B7FC287465D2004F767C /* ViewModel */,
 				0197B7FD28746624004F767C /* CarsList */,
 				0197B7F4287459D6004F767C /* MonthlyAnalize */,
@@ -117,13 +117,13 @@
 			path = MonthlyAnalize;
 			sourceTree = "<group>";
 		};
-		0197B7F92874601A004F767C /* MainFlow */ = {
+		0197B7F92874601A004F767C /* Flows */ = {
 			isa = PBXGroup;
 			children = (
 				0197B7FA2874603E004F767C /* MainFlow.swift */,
 				0197B802287468A7004F767C /* CarsListFlow.swift */,
 			);
-			path = MainFlow;
+			path = Flows;
 			sourceTree = "<group>";
 		};
 		0197B7FC287465D2004F767C /* ViewModel */ = {
@@ -187,6 +187,7 @@
 				0197B7D22874428D004F767C /* Frameworks */,
 				0197B7D32874428D004F767C /* Resources */,
 				327117B2B4FDD14A80DC8134 /* [CP] Embed Pods Frameworks */,
+				0197B8062874B9AD004F767C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,6 +245,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0197B8062874B9AD004F767C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\n";
+		};
 		327117B2B4FDD14A80DC8134 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
