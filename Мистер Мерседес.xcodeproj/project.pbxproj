@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
 		0197B7DB2874428D004F767C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DA2874428D004F767C /* SceneDelegate.swift */; };
-		0197B7DD2874428D004F767C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* ViewController.swift */; };
+		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
 		0197B7E22874428F004F767C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7E12874428F004F767C /* Assets.xcassets */; };
 		0197B7E52874428F004F767C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7E32874428F004F767C /* LaunchScreen.storyboard */; };
+		0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7ED28744E03004F767C /* UITabBarController.swift */; };
+		0197B7F02874582A004F767C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7EF2874582A004F767C /* Coordinator.swift */; };
+		0197B7F628745A38004F767C /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7F528745A38004F767C /* CarsListView.swift */; };
+		0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7F728745A6C004F767C /* UINavigationController.swift */; };
+		0197B7FB2874603E004F767C /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7FA2874603E004F767C /* MainFlow.swift */; };
+		0197B801287466F3004F767C /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B800287466F3004F767C /* CarsListViewModel.swift */; };
+		0197B803287468A7004F767C /* CarsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B802287468A7004F767C /* CarsListFlow.swift */; };
+		0197B805287477CE004F767C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B804287477CE004F767C /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197B7DA2874428D004F767C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0197B7DC2874428D004F767C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
 		0197B7DF2874428D004F767C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0197B7E12874428F004F767C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0197B7E42874428F004F767C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0197B7E62874428F004F767C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0197B7ED28744E03004F767C /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		0197B7EF2874582A004F767C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0197B7F528745A38004F767C /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
+		0197B7F728745A6C004F767C /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		0197B7FA2874603E004F767C /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
+		0197B800287466F3004F767C /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
+		0197B802287468A7004F767C /* CarsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListFlow.swift; sourceTree = "<group>"; };
+		0197B804287477CE004F767C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.debug.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.debug.xcconfig"; sourceTree = "<group>"; };
+		E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.release.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,8 @@
 			children = (
 				0197B7D72874428D004F767C /* Мистер Мерседес */,
 				0197B7D62874428D004F767C /* Products */,
+				A481447195BFFEDE83490492 /* Pods */,
+				39D5B6F1D852354B6D3C265A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +76,103 @@
 		0197B7D72874428D004F767C /* Мистер Мерседес */ = {
 			isa = PBXGroup;
 			children = (
-				0197B7D82874428D004F767C /* AppDelegate.swift */,
+				0197B7EC28744DE4004F767C /* Extensions */,
+				0197B7F1287458AD004F767C /* Coordinator */,
+				0197B7F92874601A004F767C /* MainFlow */,
+				0197B7FC287465D2004F767C /* ViewModel */,
+				0197B7FD28746624004F767C /* CarsList */,
+				0197B7F4287459D6004F767C /* MonthlyAnalize */,
 				0197B7DA2874428D004F767C /* SceneDelegate.swift */,
-				0197B7DC2874428D004F767C /* ViewController.swift */,
+				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
 				0197B7E12874428F004F767C /* Assets.xcassets */,
 				0197B7E32874428F004F767C /* LaunchScreen.storyboard */,
 				0197B7E62874428F004F767C /* Info.plist */,
 			);
 			path = "Мистер Мерседес";
+			sourceTree = "<group>";
+		};
+		0197B7EC28744DE4004F767C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7ED28744E03004F767C /* UITabBarController.swift */,
+				0197B7F728745A6C004F767C /* UINavigationController.swift */,
+				0197B804287477CE004F767C /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0197B7F1287458AD004F767C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7EF2874582A004F767C /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0197B7F4287459D6004F767C /* MonthlyAnalize */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MonthlyAnalize;
+			sourceTree = "<group>";
+		};
+		0197B7F92874601A004F767C /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7FA2874603E004F767C /* MainFlow.swift */,
+				0197B802287468A7004F767C /* CarsListFlow.swift */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		0197B7FC287465D2004F767C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0197B7FD28746624004F767C /* CarsList */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7FF2874665C004F767C /* ViewModel */,
+				0197B7FE28746650004F767C /* View */,
+			);
+			path = CarsList;
+			sourceTree = "<group>";
+		};
+		0197B7FE28746650004F767C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7DC2874428D004F767C /* CarsListViewController.swift */,
+				0197B7F528745A38004F767C /* CarsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0197B7FF2874665C004F767C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0197B800287466F3004F767C /* CarsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		39D5B6F1D852354B6D3C265A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A481447195BFFEDE83490492 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */,
+				E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0197B7E92874428F004F767C /* Build configuration list for PBXNativeTarget "Мистер Мерседес" */;
 			buildPhases = (
+				6DED45AACA8AA19414E35162 /* [CP] Check Pods Manifest.lock */,
 				0197B7D12874428D004F767C /* Sources */,
 				0197B7D22874428D004F767C /* Frameworks */,
 				0197B7D32874428D004F767C /* Resources */,
+				327117B2B4FDD14A80DC8134 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +243,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		327117B2B4FDD14A80DC8134 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DED45AACA8AA19414E35162 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Мистер Мерседес-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0197B7D12874428D004F767C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0197B7DD2874428D004F767C /* ViewController.swift in Sources */,
+				0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */,
+				0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */,
+				0197B805287477CE004F767C /* UIView.swift in Sources */,
+				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
+				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
 				0197B7D92874428D004F767C /* AppDelegate.swift in Sources */,
 				0197B7DB2874428D004F767C /* SceneDelegate.swift in Sources */,
+				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
+				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
+				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,
+				0197B801287466F3004F767C /* CarsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +444,7 @@
 		};
 		0197B7EA2874428F004F767C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +475,7 @@
 		};
 		0197B7EB2874428F004F767C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
