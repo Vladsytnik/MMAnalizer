@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UINavigationController {
     func append(viewController: UIViewController) {
         self.viewControllers.append(viewController)

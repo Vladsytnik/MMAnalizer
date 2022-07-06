@@ -8,23 +8,20 @@
 import Foundation
 import UIKit
 
-
 class Coordinator {
-    
+
     let mainFlow: MainFlow
     let tabBarController: UITabBarController
-    
+
     init(with tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
-        
+
         self.mainFlow = MainFlow(tabBar: tabBarController)
     }
 }
 
 extension Coordinator {
     func customizeTabBarController() {
-        
+
     }
 }
-
-

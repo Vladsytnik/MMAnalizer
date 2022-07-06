@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class CarsListView: UIView {
-    
+
     lazy var tableView: UITableView  = {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self,
@@ -17,17 +17,17 @@ class CarsListView: UIView {
         appendSubviews(tableView)
         return tableView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addConstraints()
         self.backgroundColor = .systemPink
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func addConstraints() {
         tableView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()

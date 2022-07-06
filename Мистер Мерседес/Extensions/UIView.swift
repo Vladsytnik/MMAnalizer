@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UIView {
     func appendSubviews(_ views: UIView...) {
         for view in views {

@@ -17,15 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let myScene = (scene as? UIWindowScene) else { return }
-        
+
         let carsNavController = UINavigationController()
         let monthlyAnalisisNavController = UINavigationController()
         let tabBarController = UITabBarController()
-        
+
         tabBarController.configure(withControllers: carsNavController, monthlyAnalisisNavController)
-        
+
         coordinator = Coordinator(with: tabBarController)
-        
+
         window = UIWindow(windowScene: myScene)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
@@ -59,6 +59,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

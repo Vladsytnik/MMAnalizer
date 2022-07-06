@@ -1,0 +1,5 @@
+excluded:
+  - Pods
+  - Мистер Мерседес/Main.storyboard
+  - Мистер Мерседес/AppDelegate.swift
+  - Мистер Мерседес/SceneDelegate.swift

@@ -21,6 +21,7 @@
 		0197B801287466F3004F767C /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B800287466F3004F767C /* CarsListViewModel.swift */; };
 		0197B803287468A7004F767C /* CarsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B802287468A7004F767C /* CarsListFlow.swift */; };
 		0197B805287477CE004F767C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B804287477CE004F767C /* UIView.swift */; };
+		0197B80828755BE5004F767C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0197B80728755BE5004F767C /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0197B800287466F3004F767C /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
 		0197B802287468A7004F767C /* CarsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListFlow.swift; sourceTree = "<group>"; };
 		0197B804287477CE004F767C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0197B80728755BE5004F767C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.debug.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.debug.xcconfig"; sourceTree = "<group>"; };
 		E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.release.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				0197B7D72874428D004F767C /* Мистер Мерседес */,
+				0197B80728755BE5004F767C /* .swiftlint.yml */,
 				0197B7D62874428D004F767C /* Products */,
 				A481447195BFFEDE83490492 /* Pods */,
 				39D5B6F1D852354B6D3C265A /* Frameworks */,
@@ -236,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0197B80828755BE5004F767C /* .swiftlint.yml in Resources */,
 				0197B7E52874428F004F767C /* LaunchScreen.storyboard in Resources */,
 				0197B7E22874428F004F767C /* Assets.xcassets in Resources */,
 				0197B7E02874428D004F767C /* Main.storyboard in Resources */,
@@ -260,7 +264,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
 		};
 		327117B2B4FDD14A80DC8134 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
