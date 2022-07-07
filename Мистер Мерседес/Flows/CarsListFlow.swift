@@ -35,5 +35,8 @@ extension CarsListFlow {
 
     func configureNavigationController() {
         navController.navigationBar.prefersLargeTitles = true
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navController.navigationBar.standardAppearance = navBarAppearance
     }
 }

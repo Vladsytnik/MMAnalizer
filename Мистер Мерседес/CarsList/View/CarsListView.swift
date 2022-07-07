@@ -12,8 +12,6 @@ class CarsListView: UIView {
 
     lazy var tableView: UITableView  = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "cell")
         appendSubviews(tableView)
         return tableView
     }()

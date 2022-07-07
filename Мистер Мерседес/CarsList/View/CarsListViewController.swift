@@ -8,6 +8,10 @@
 import UIKit
 
 class CarsListViewController: UIViewController {
+    
+    struct Constant {
+        static let cellID = "cellForCarsList"
+    }
 
     let viewModel: CarsListViewModel
     let carsListView = CarsListView()
@@ -40,6 +44,10 @@ class CarsListViewController: UIViewController {
     func configureTableView() {
         carsListView.tableView.dataSource = self
         carsListView.tableView.delegate = self
+        carsListView.tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: Constant.cellID
+        )
     }
     
     func configureThisVC() {
@@ -72,7 +80,8 @@ extension CarsListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let cell = tableView
+            .dequeueReusableCell(withIdentifier: Constant.cellID)
         cell?.textLabel?.text = "R\(indexPath.row)"
         cell?.imageView?.image = UIImage(systemName: "car")
         return cell ?? UITableViewCell()
