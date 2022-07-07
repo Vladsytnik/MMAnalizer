@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
-		0197B7DB2874428D004F767C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DA2874428D004F767C /* SceneDelegate.swift */; };
 		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
 		0197B7E22874428F004F767C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7E12874428F004F767C /* Assets.xcassets */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0197B7DA2874428D004F767C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
 		0197B7DF2874428D004F767C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0197B7E12874428F004F767C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				0197B7FC287465D2004F767C /* ViewModel */,
 				0197B7FD28746624004F767C /* CarsList */,
 				0197B7F4287459D6004F767C /* MonthlyAnalize */,
-				0197B7DA2874428D004F767C /* SceneDelegate.swift */,
 				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
 				0197B7E12874428F004F767C /* Assets.xcassets */,
@@ -318,7 +315,6 @@
 				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
 				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
 				0197B7D92874428D004F767C /* AppDelegate.swift in Sources */,
-				0197B7DB2874428D004F767C /* SceneDelegate.swift in Sources */,
 				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
 				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,
