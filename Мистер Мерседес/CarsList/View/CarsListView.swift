@@ -17,6 +17,12 @@ class CarsListView: UIView {
         appendSubviews(tableView)
         return tableView
     }()
+    
+    lazy var newCarButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: "plus.square")
+        return button
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

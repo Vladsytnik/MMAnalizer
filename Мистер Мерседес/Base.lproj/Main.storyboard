@@ -216,6 +216,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Автомобили" id="jeN-t6-DbV">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="uue-R4-4Vd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1ik-fH-h7O"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypj-uk-lya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

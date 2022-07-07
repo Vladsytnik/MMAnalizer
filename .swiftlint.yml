@@ -3,3 +3,7 @@ excluded:
   - Мистер Мерседес/Main.storyboard
   - Мистер Мерседес/AppDelegate.swift
   - Мистер Мерседес/SceneDelegate.swift
+
+
+disabled_rules:
+  - trailing_whitespace

@@ -15,13 +15,6 @@ class Coordinator {
 
     init(with tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
-
         self.mainFlow = MainFlow(tabBar: tabBarController)
-    }
-}
-
-extension Coordinator {
-    func customizeTabBarController() {
-
     }
 }
