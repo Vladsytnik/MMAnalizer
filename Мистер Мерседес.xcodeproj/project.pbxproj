@@ -22,6 +22,9 @@
 		0197B805287477CE004F767C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B804287477CE004F767C /* UIView.swift */; };
 		0197B80828755BE5004F767C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0197B80728755BE5004F767C /* .swiftlint.yml */; };
 		0197B8B928772C19004F767C /* Мистер Мерседес.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0197B8B728772C19004F767C /* Мистер Мерседес.xcdatamodeld */; };
+		01FD40C828774A6B002F7F97 /* NewCarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40C728774A6B002F7F97 /* NewCarPageViewController.swift */; };
+		01FD40CA28774A81002F7F97 /* NewCarPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40C928774A81002F7F97 /* NewCarPageView.swift */; };
+		01FD40CD28775D68002F7F97 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40CC28775D68002F7F97 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		0197B804287477CE004F767C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0197B80728755BE5004F767C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0197B8B828772C19004F767C /* deleteThis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deleteThis.xcdatamodel; sourceTree = "<group>"; };
+		01FD40C728774A6B002F7F97 /* NewCarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPageViewController.swift; sourceTree = "<group>"; };
+		01FD40C928774A81002F7F97 /* NewCarPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPageView.swift; sourceTree = "<group>"; };
+		01FD40CC28775D68002F7F97 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.debug.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.debug.xcconfig"; sourceTree = "<group>"; };
 		E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.release.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,11 +85,13 @@
 		0197B7D72874428D004F767C /* Мистер Мерседес */ = {
 			isa = PBXGroup;
 			children = (
+				01FD40CB28775D5E002F7F97 /* Colors */,
 				0197B7EC28744DE4004F767C /* Extensions */,
 				0197B7F1287458AD004F767C /* Coordinator */,
 				0197B7F92874601A004F767C /* Flows */,
 				0197B7FC287465D2004F767C /* ViewModel */,
-				0197B7FD28746624004F767C /* CarsList */,
+				0197B7FD28746624004F767C /* CarsListPage */,
+				01FD40C428774933002F7F97 /* NewCarPage */,
 				0197B7F4287459D6004F767C /* MonthlyAnalize */,
 				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
@@ -136,13 +144,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0197B7FD28746624004F767C /* CarsList */ = {
+		0197B7FD28746624004F767C /* CarsListPage */ = {
 			isa = PBXGroup;
 			children = (
 				0197B7FF2874665C004F767C /* ViewModel */,
 				0197B7FE28746650004F767C /* View */,
 			);
-			path = CarsList;
+			path = CarsListPage;
 			sourceTree = "<group>";
 		};
 		0197B7FE28746650004F767C /* View */ = {
@@ -160,6 +168,39 @@
 				0197B800287466F3004F767C /* CarsListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01FD40C428774933002F7F97 /* NewCarPage */ = {
+			isa = PBXGroup;
+			children = (
+				01FD40C52877496C002F7F97 /* ViewModel */,
+				01FD40C628774973002F7F97 /* View */,
+			);
+			path = NewCarPage;
+			sourceTree = "<group>";
+		};
+		01FD40C52877496C002F7F97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01FD40C628774973002F7F97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01FD40C728774A6B002F7F97 /* NewCarPageViewController.swift */,
+				01FD40C928774A81002F7F97 /* NewCarPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01FD40CB28775D5E002F7F97 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				01FD40CC28775D68002F7F97 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		39D5B6F1D852354B6D3C265A /* Frameworks */ = {
@@ -313,12 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */,
+				01FD40C828774A6B002F7F97 /* NewCarPageViewController.swift in Sources */,
+				01FD40CA28774A81002F7F97 /* NewCarPageView.swift in Sources */,
 				0197B8B928772C19004F767C /* Мистер Мерседес.xcdatamodeld in Sources */,
 				0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */,
 				0197B805287477CE004F767C /* UIView.swift in Sources */,
 				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
 				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
 				0197B7D92874428D004F767C /* AppDelegate.swift in Sources */,
+				01FD40CD28775D68002F7F97 /* Colors.swift in Sources */,
 				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
 				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,

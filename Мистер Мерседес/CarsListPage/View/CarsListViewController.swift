@@ -53,6 +53,7 @@ class CarsListViewController: UIViewController {
     func configureThisVC() {
         self.view.backgroundColor = .white
         self.title = "Автомобили"
+        self.navigationItem.backButtonTitle = "Назад"
     }
     
     func configureRightBarButtonItem() {
@@ -67,7 +68,9 @@ class CarsListViewController: UIViewController {
 // MARK: - Actions
 extension CarsListViewController {
     @objc func clickAddNewCar(sender: UIBarButtonItem) {
-        print("создать новую машину")
+        let controller = NewCarPageViewController()
+        navigationController?
+            .pushViewController(controller, animated: true)
     }
 }
 

@@ -25,6 +25,66 @@
             </objects>
             <point key="canvasLocation" x="625" y="179"/>
         </scene>
+        <!--Добавить новый-->
+        <scene sceneID="ccF-VH-Vk8">
+            <objects>
+                <viewController id="iy8-pM-lQs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S0L-QH-YTe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-5M-H7F">
+                                <rect key="frame" x="215" y="575" width="127" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Добавить"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-gw-Mnx">
+                                <rect key="frame" x="46" y="575" width="127" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Отменить"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6Z7-zV-4oH">
+                                <rect key="frame" x="16" y="238.5" width="343" height="190"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер (R11):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-Ro-jye">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [р]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-rC-iuI">
+                                        <rect key="frame" x="0.0" y="52" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [€]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3un-3y-bgI">
+                                        <rect key="frame" x="0.0" y="104" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выручка:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-dA-Ooh">
+                                        <rect key="frame" x="0.0" y="156" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PBs-HR-EJX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PBs-HR-EJX" firstAttribute="trailing" secondItem="6Z7-zV-4oH" secondAttribute="trailing" constant="16" id="FlQ-N1-8ky"/>
+                            <constraint firstItem="6Z7-zV-4oH" firstAttribute="leading" secondItem="PBs-HR-EJX" secondAttribute="leading" constant="16" id="S3F-dE-6jh"/>
+                            <constraint firstItem="6Z7-zV-4oH" firstAttribute="centerY" secondItem="S0L-QH-YTe" secondAttribute="centerY" id="rOl-ui-cpg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Добавить новый" largeTitleDisplayMode="always" id="2kv-hb-OwS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhS-gb-hmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="-1214.8425787106448"/>
+        </scene>
         <!--Автомобили-->
         <scene sceneID="gTN-cC-pPj">
             <objects>
@@ -216,7 +276,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Автомобили" id="jeN-t6-DbV">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="uue-R4-4Vd"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="1ik-fH-h7O"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1ik-fH-h7O">
+                            <connections>
+                                <segue destination="iy8-pM-lQs" kind="show" id="U9e-sQ-eqt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypj-uk-lya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

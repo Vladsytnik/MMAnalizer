@@ -12,7 +12,6 @@ class CarsListView: UIView {
 
     lazy var tableView: UITableView  = {
         let tableView = UITableView()
-        appendSubviews(tableView)
         return tableView
     }()
     
@@ -24,8 +23,8 @@ class CarsListView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
         addConstraints()
-        self.backgroundColor = .systemPink
     }
 
     required init?(coder: NSCoder) {
@@ -36,5 +35,11 @@ class CarsListView: UIView {
         tableView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
+    }
+    
+    func setupViews() {
+        appendSubviews(
+            tableView
+        )
     }
 }
