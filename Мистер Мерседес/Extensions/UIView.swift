@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func appendSubviews(_ views: UIView...) {
+    @discardableResult func appendSubviews(_ views: UIView...) -> UIView {
         for view in views {
             view.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(view)
         }
+        return self
     }
 }

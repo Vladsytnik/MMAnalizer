@@ -21,10 +21,12 @@
 		0197B803287468A7004F767C /* CarsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B802287468A7004F767C /* CarsListFlow.swift */; };
 		0197B805287477CE004F767C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B804287477CE004F767C /* UIView.swift */; };
 		0197B80828755BE5004F767C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0197B80728755BE5004F767C /* .swiftlint.yml */; };
-		0197B8B928772C19004F767C /* Мистер Мерседес.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0197B8B728772C19004F767C /* Мистер Мерседес.xcdatamodeld */; };
+		01E3A519287B002F00B15201 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3A518287B002F00B15201 /* UITextField.swift */; };
+		01E3A51C287B03E700B15201 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01E3A51A287B03E700B15201 /* Model.xcdatamodeld */; };
 		01FD40C828774A6B002F7F97 /* NewCarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40C728774A6B002F7F97 /* NewCarPageViewController.swift */; };
 		01FD40CA28774A81002F7F97 /* NewCarPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40C928774A81002F7F97 /* NewCarPageView.swift */; };
 		01FD40CD28775D68002F7F97 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40CC28775D68002F7F97 /* Colors.swift */; };
+		01FD40CF28782587002F7F97 /* UIStackVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD40CE28782587002F7F97 /* UIStackVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +46,12 @@
 		0197B802287468A7004F767C /* CarsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListFlow.swift; sourceTree = "<group>"; };
 		0197B804287477CE004F767C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0197B80728755BE5004F767C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		0197B8B828772C19004F767C /* deleteThis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deleteThis.xcdatamodel; sourceTree = "<group>"; };
+		01E3A518287B002F00B15201 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		01E3A51B287B03E700B15201 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		01FD40C728774A6B002F7F97 /* NewCarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPageViewController.swift; sourceTree = "<group>"; };
 		01FD40C928774A81002F7F97 /* NewCarPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarPageView.swift; sourceTree = "<group>"; };
 		01FD40CC28775D68002F7F97 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		01FD40CE28782587002F7F97 /* UIStackVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackVIew.swift; sourceTree = "<group>"; };
 		C58EF2BE48F6D3E692D140BF /* Pods-Мистер Мерседес.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.debug.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.debug.xcconfig"; sourceTree = "<group>"; };
 		E206F52CBD5BD94A2730B432 /* Pods-Мистер Мерседес.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Мистер Мерседес.release.xcconfig"; path = "Target Support Files/Pods-Мистер Мерседес/Pods-Мистер Мерседес.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +102,7 @@
 				0197B7E12874428F004F767C /* Assets.xcassets */,
 				0197B7E32874428F004F767C /* LaunchScreen.storyboard */,
 				0197B7E62874428F004F767C /* Info.plist */,
-				0197B8B728772C19004F767C /* Мистер Мерседес.xcdatamodeld */,
+				01E3A51A287B03E700B15201 /* Model.xcdatamodeld */,
 			);
 			path = "Мистер Мерседес";
 			sourceTree = "<group>";
@@ -109,6 +113,8 @@
 				0197B7ED28744E03004F767C /* UITabBarController.swift */,
 				0197B7F728745A6C004F767C /* UINavigationController.swift */,
 				0197B804287477CE004F767C /* UIView.swift */,
+				01FD40CE28782587002F7F97 /* UIStackVIew.swift */,
+				01E3A518287B002F00B15201 /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,16 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FD40CF28782587002F7F97 /* UIStackVIew.swift in Sources */,
 				0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */,
 				01FD40C828774A6B002F7F97 /* NewCarPageViewController.swift in Sources */,
+				01E3A519287B002F00B15201 /* UITextField.swift in Sources */,
 				01FD40CA28774A81002F7F97 /* NewCarPageView.swift in Sources */,
-				0197B8B928772C19004F767C /* Мистер Мерседес.xcdatamodeld in Sources */,
 				0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */,
 				0197B805287477CE004F767C /* UIView.swift in Sources */,
 				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
 				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
 				0197B7D92874428D004F767C /* AppDelegate.swift in Sources */,
 				01FD40CD28775D68002F7F97 /* Colors.swift in Sources */,
+				01E3A51C287B03E700B15201 /* Model.xcdatamodeld in Sources */,
 				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
 				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,
@@ -594,13 +602,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0197B8B728772C19004F767C /* Мистер Мерседес.xcdatamodeld */ = {
+		01E3A51A287B03E700B15201 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0197B8B828772C19004F767C /* deleteThis.xcdatamodel */,
+				01E3A51B287B03E700B15201 /* Model.xcdatamodel */,
 			);
-			currentVersion = 0197B8B828772C19004F767C /* deleteThis.xcdatamodel */;
-			path = "Мистер Мерседес.xcdatamodeld";
+			currentVersion = 01E3A51B287B03E700B15201 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

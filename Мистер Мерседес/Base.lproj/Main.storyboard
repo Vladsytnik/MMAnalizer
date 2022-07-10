@@ -29,54 +29,73 @@
         <scene sceneID="ccF-VH-Vk8">
             <objects>
                 <viewController id="iy8-pM-lQs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S0L-QH-YTe">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="S0L-QH-YTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-5M-H7F">
-                                <rect key="frame" x="215" y="575" width="127" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Добавить"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-gw-Mnx">
-                                <rect key="frame" x="46" y="575" width="127" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Отменить"/>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6Z7-zV-4oH">
-                                <rect key="frame" x="16" y="238.5" width="343" height="190"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP8-fh-1Tc">
+                                <rect key="frame" x="-4" y="218.5" width="383" height="407.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер (R11):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-Ro-jye">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [р]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-rC-iuI">
-                                        <rect key="frame" x="0.0" y="52" width="343" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [€]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3un-3y-bgI">
-                                        <rect key="frame" x="0.0" y="104" width="343" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выручка:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-dA-Ooh">
-                                        <rect key="frame" x="0.0" y="156" width="343" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6Z7-zV-4oH">
+                                        <rect key="frame" x="16" y="0.0" width="351" height="190"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер (R11):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-Ro-jye">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [р]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-rC-iuI">
+                                                <rect key="frame" x="0.0" y="52" width="351" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Себестоимость [€]:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3un-3y-bgI">
+                                                <rect key="frame" x="0.0" y="104" width="351" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выручка:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-dA-Ooh">
+                                                <rect key="frame" x="0.0" y="156" width="351" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="oNG-fq-Usw">
+                                        <rect key="frame" x="79.5" y="210" width="224" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-gw-Mnx">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Отменить"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI4-5M-H7F">
+                                                <rect key="frame" x="133" y="0.0" width="91" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Добавить"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="6Z7-zV-4oH" firstAttribute="top" secondItem="gEL-Om-pAa" secondAttribute="top" id="1Da-lH-9q7"/>
+                                    <constraint firstAttribute="width" constant="383" id="43o-3d-zRh"/>
+                                    <constraint firstAttribute="height" constant="407.5" id="IlU-3g-6E4"/>
+                                    <constraint firstItem="oNG-fq-Usw" firstAttribute="top" secondItem="6Z7-zV-4oH" secondAttribute="bottom" constant="20" id="N0A-uS-oPt"/>
+                                    <constraint firstItem="gEL-Om-pAa" firstAttribute="trailing" secondItem="6Z7-zV-4oH" secondAttribute="trailing" constant="16" id="b7S-Zc-jF9"/>
+                                    <constraint firstItem="6Z7-zV-4oH" firstAttribute="leading" secondItem="gEL-Om-pAa" secondAttribute="leading" constant="16" id="rcq-hK-kC5"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="snC-JU-PVG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gEL-Om-pAa"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PBs-HR-EJX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PBs-HR-EJX" firstAttribute="trailing" secondItem="6Z7-zV-4oH" secondAttribute="trailing" constant="16" id="FlQ-N1-8ky"/>
-                            <constraint firstItem="6Z7-zV-4oH" firstAttribute="leading" secondItem="PBs-HR-EJX" secondAttribute="leading" constant="16" id="S3F-dE-6jh"/>
-                            <constraint firstItem="6Z7-zV-4oH" firstAttribute="centerY" secondItem="S0L-QH-YTe" secondAttribute="centerY" id="rOl-ui-cpg"/>
+                            <constraint firstAttribute="bottom" secondItem="jP8-fh-1Tc" secondAttribute="bottom" id="J9d-W4-ZV8"/>
+                            <constraint firstItem="jP8-fh-1Tc" firstAttribute="leading" secondItem="S0L-QH-YTe" secondAttribute="leading" id="JmP-ik-XLP"/>
+                            <constraint firstAttribute="trailing" secondItem="jP8-fh-1Tc" secondAttribute="trailing" id="cFX-Jk-YGY"/>
+                            <constraint firstItem="jP8-fh-1Tc" firstAttribute="top" secondItem="PBs-HR-EJX" secondAttribute="top" id="eaj-gs-JEg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Добавить новый" largeTitleDisplayMode="always" id="2kv-hb-OwS"/>
