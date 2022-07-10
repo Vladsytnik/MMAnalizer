@@ -12,6 +12,8 @@ class NewCarPageViewController: UIViewController {
     var newCarPageView = NewCarPageView()
     var textFields: [UITextField] = []
     
+    let viewModel = NewCarPageViewModel()
+    
     // MARK: - Life Cycle
     override func loadView() {
         view = newCarPageView
