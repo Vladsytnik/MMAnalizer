@@ -37,8 +37,8 @@ class NewCarPageViewController: UIViewController {
     func configureDelegates() {
         textFields = [
             newCarPageView.carNameTF,
-            newCarPageView.carCostPriceInRubleTF,
-            newCarPageView.carCostPriceInEuroTF,
+            newCarPageView.carPriceInRubleTF,
+            newCarPageView.carPriceInEuroTF,
             newCarPageView.carEarningsTF
         ]
         textFields.forEach {
@@ -62,14 +62,25 @@ class NewCarPageViewController: UIViewController {
             .addTarget(self,
                        action: #selector(clickOnCancelButton),
                        for: .touchUpInside)
+        newCarPageView
+            .addButton
+            .addTarget(self,
+                       action: #selector(clickOnAddButton),
+                       for: .touchUpInside)
     }
-
 }
 
 // MARK: - Actions
 extension NewCarPageViewController {
     @objc func clickOnCancelButton() {
         navigationController?.popViewController(animated: true)
+    }
+    @objc func clickOnAddButton() {
+        navigationController?.popViewController(animated: true)
+        viewModel.carName.onNext(newCarPageView.carNameTF.text!)
+        viewModel.carEarnings.onNext(newCarPageView.carEarningsTF.text!)
+        viewModel.carPriceInEuro.onNext(newCarPageView.carPriceInEuroTF.text!)
+        viewModel.carPriceInRuble.onNext(newCarPageView.carPriceInRubleTF.text!)
     }
 }
 

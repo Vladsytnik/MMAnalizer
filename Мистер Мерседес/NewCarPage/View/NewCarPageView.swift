@@ -52,7 +52,7 @@ class NewCarPageView: UIView {
         return textField
     }()
     
-    lazy var carCostPriceInRubleTF: UITextField = {
+    lazy var carPriceInRubleTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Себестоимость [р]:"
         textField.returnKeyType = .continue
@@ -61,7 +61,7 @@ class NewCarPageView: UIView {
         return textField
     }()
     
-    lazy var carCostPriceInEuroTF: UITextField = {
+    lazy var carPriceInEuroTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Себестоимость [€]:"
         textField.returnKeyType = .continue
@@ -112,8 +112,8 @@ extension NewCarPageView {
         appendSubviews(
             stackViewForTextField.appendArrangedSubviews(
                 carNameTF,
-                carCostPriceInRubleTF,
-                carCostPriceInEuroTF,
+                carPriceInRubleTF,
+                carPriceInEuroTF,
                 carEarningsTF
             ),
             stackViewForButton.appendArrangedSubviews(
@@ -122,7 +122,7 @@ extension NewCarPageView {
             )
         )
         
-        [carNameTF, carEarningsTF, carCostPriceInEuroTF, carCostPriceInRubleTF]
+        [carNameTF, carEarningsTF, carPriceInEuroTF, carPriceInRubleTF]
             .forEach {
                 $0.borderStyle = .roundedRect
                 $0.enablesReturnKeyAutomatically = true
@@ -151,7 +151,7 @@ extension NewCarPageView {
         addButton.snp.makeConstraints { make in
             make.width.equalTo(Constant.buttonWidth)
         }
-        [carNameTF, carEarningsTF, carCostPriceInEuroTF, carCostPriceInRubleTF]
+        [carNameTF, carEarningsTF, carPriceInEuroTF, carPriceInRubleTF]
             .forEach {
                 $0.snp.makeConstraints { make in
                     make.height.equalTo(40)

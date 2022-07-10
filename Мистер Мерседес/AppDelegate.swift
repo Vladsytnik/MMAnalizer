@@ -28,35 +28,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
+        getDataFromDB()
         return true
     }
     
-    // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Model")
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Unable to load persistent stores: \(error)")
-            }
-        }
-        return container
-    }()
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        saveContext()
-    }
+}
 
-    // MARK: - Core Data Saving support
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+extension AppDelegate {
+    // Для тестирования БД
+    func getDataFromDB() {
+        let context = CoreDataManager.shared.context
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        
+        do {
+            let car = try context.fetch(fetchRequest)
+            print("\nВ БД при запуске следующие данные:")
+            car.forEach { car in
+                print("\(car.name!) \(car.costPriceInRuble) \(car.costPriceInEuro) \(car.earning)")
             }
+        } catch let error {
+            print(error)
         }
     }
-    
 }
