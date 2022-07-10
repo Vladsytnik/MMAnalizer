@@ -19,6 +19,13 @@ class NewCarPageView: UIView {
         static var buttonWidth = 135
         static var buttonHeight = 40
     }
+    
+//    lazy var scrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.showsHorizontalScrollIndicator = false
+//        return scrollView
+//    }()
 
     lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
@@ -41,57 +48,52 @@ class NewCarPageView: UIView {
     lazy var carNameTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Номер (R11):"
-        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .continue
         return textField
     }()
     
-    lazy var carCostPriceInRubleTF: UITextField = {
+    lazy var carPriceInRubleTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Себестоимость [р]:"
-        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .continue
+        textField.setupToolBar()
+        textField.keyboardType = .decimalPad
         return textField
     }()
     
-    lazy var carCostPriceInEuroTF: UITextField = {
+    lazy var carPriceInEuroTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Себестоимость [€]:"
-        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .continue
+        textField.setupToolBar()
+        textField.keyboardType = .decimalPad
         return textField
     }()
     
     lazy var carEarningsTF: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Выручка:"
-        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .done
+        textField.setupToolBar()
+        textField.keyboardType = .decimalPad
         return textField
     }()
     
     lazy var stackViewForTextField: UIStackView = {
-        let stackView = UIStackView(
-            arrangedSubviews: [
-                carNameTF,
-                carCostPriceInRubleTF,
-                carCostPriceInEuroTF,
-                carEarningsTF
-            ]
-        )
+        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = Constant.spacingBetweenTextFields
         return stackView
     }()
     
     lazy var stackViewForButton: UIStackView = {
-        let stackView = UIStackView(
-            arrangedSubviews: [
-                cancelButton,
-                addButton
-            ]
-        )
+        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = Constant.spacingBetweenButtons
         return stackView
     }()
     
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -104,13 +106,39 @@ class NewCarPageView: UIView {
     
 }
 
-// MARK: - Constraints
+// MARK: - Functions
 extension NewCarPageView {
+    func setupViews() {
+        appendSubviews(
+            stackViewForTextField.appendArrangedSubviews(
+                carNameTF,
+                carPriceInRubleTF,
+                carPriceInEuroTF,
+                carEarningsTF
+            ),
+            stackViewForButton.appendArrangedSubviews(
+                cancelButton,
+                addButton
+            )
+        )
+        
+        [carNameTF, carEarningsTF, carPriceInEuroTF, carPriceInRubleTF]
+            .forEach {
+                $0.borderStyle = .roundedRect
+                $0.enablesReturnKeyAutomatically = true
+                // $0.setupToolBar()
+            }
+    }
+    
     func addConstraints() {
+//        scrollView.snp.makeConstraints { make in
+//            make.leading.trailing.top.bottom.equalToSuperview()
+//        }
         stackViewForTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(40)
         }
         stackViewForButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-70)
@@ -123,12 +151,12 @@ extension NewCarPageView {
         addButton.snp.makeConstraints { make in
             make.width.equalTo(Constant.buttonWidth)
         }
+        [carNameTF, carEarningsTF, carPriceInEuroTF, carPriceInRubleTF]
+            .forEach {
+                $0.snp.makeConstraints { make in
+                    make.height.equalTo(40)
+                }
+            }
     }
-    
-    func setupViews() {
-        appendSubviews(
-            stackViewForTextField,
-            stackViewForButton
-        )
-    }
+
 }

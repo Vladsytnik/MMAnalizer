@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+        <attribute name="comeData" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="costPriceInEuro" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="costPriceInRuble" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="earning" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="month" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="monthRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Month"/>
+    </entity>
+    <entity name="Month" representedClassName="Month" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sales" optional="YES" attributeType="Transformable"/>
+        <relationship name="salesRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sales"/>
+    </entity>
+    <entity name="Sales" representedClassName="Sales" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Car" positionX="-91.3359375" positionY="-10.37109375" width="139.15234375" height="148"/>
+        <element name="Month" positionX="119.4140625" positionY="21.0234375" width="128" height="88"/>
+        <element name="Sales" positionX="305.859375" positionY="34.3203125" width="128" height="59"/>
+    </elements>
+</model>

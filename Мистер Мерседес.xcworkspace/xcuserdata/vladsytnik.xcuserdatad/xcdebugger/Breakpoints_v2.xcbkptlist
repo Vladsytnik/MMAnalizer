@@ -3,4 +3,54 @@
    uuid = "D7B88C47-3D2A-4C41-B42B-34DC9EE62B55"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4744C593-704E-4A64-A83B-5CC29EA980A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/NewCarPage/View/NewCarPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "NewCarPageViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A94BC45D-2FB0-4A81-984B-D2E3700877A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/NewCarPage/View/NewCarPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "clickOnCancelButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FC77C86-079E-467F-9516-E58A914A2B3D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/NewCarPage/ViewModel/NewCarPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "userCreatedNewCar()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
