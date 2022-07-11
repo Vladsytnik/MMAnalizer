@@ -12,7 +12,7 @@ class CoreDataManager {
     
     static let shared = CoreDataManager()
     
-    init() {
+    private init() {
         
     }
     
@@ -56,4 +56,8 @@ class CoreDataManager {
             }
         }
     }
+}
+
+extension CoreDataManager {
+    
 }
