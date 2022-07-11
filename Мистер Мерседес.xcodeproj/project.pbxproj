@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011D2517287C4F07001141CD /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2513287C4F07001141CD /* Car+CoreDataClass.swift */; };
+		011D2518287C4F07001141CD /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2514287C4F07001141CD /* Car+CoreDataProperties.swift */; };
+		011D2519287C4F07001141CD /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */; };
+		011D251A287C4F07001141CD /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */; };
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
 		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011D2513287C4F07001141CD /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		011D2514287C4F07001141CD /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +82,10 @@
 		011D2512287B2772001141CD /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				01E3A51F287B22B400B15201 /* CoreDataManager.swift */,
+				011D2513287C4F07001141CD /* Car+CoreDataClass.swift */,
+				011D2514287C4F07001141CD /* Car+CoreDataProperties.swift */,
+				011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */,
+				011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -101,6 +112,7 @@
 		0197B7D72874428D004F767C /* Мистер Мерседес */ = {
 			isa = PBXGroup;
 			children = (
+				01E3A51F287B22B400B15201 /* CoreDataManager.swift */,
 				011D2512287B2772001141CD /* DB */,
 				01FD40CB28775D5E002F7F97 /* Colors */,
 				0197B7EC28744DE4004F767C /* Extensions */,
@@ -381,6 +393,8 @@
 				0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */,
 				0197B805287477CE004F767C /* UIView.swift in Sources */,
 				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
+				011D251A287C4F07001141CD /* Sale+CoreDataProperties.swift in Sources */,
+				011D2517287C4F07001141CD /* Car+CoreDataClass.swift in Sources */,
 				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
 				0197B7D92874428D004F767C /* AppDelegate.swift in Sources */,
 				01FD40CD28775D68002F7F97 /* Colors.swift in Sources */,
@@ -388,9 +402,11 @@
 				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
 				01E3A520287B22B400B15201 /* CoreDataManager.swift in Sources */,
 				01E3A51E287B10B200B15201 /* NewCarPageViewModel.swift in Sources */,
+				011D2518287C4F07001141CD /* Car+CoreDataProperties.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
 				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,
 				0197B801287466F3004F767C /* CarsListViewModel.swift in Sources */,
+				011D2519287C4F07001141CD /* Sale+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

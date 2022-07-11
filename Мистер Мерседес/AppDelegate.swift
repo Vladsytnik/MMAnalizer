@@ -32,22 +32,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        CoreDataManager.shared.saveContext()
+    }
+    
 }
 
 extension AppDelegate {
     // Для тестирования БД
     func getDataFromDB() {
-        let context = CoreDataManager.shared.context
-        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        let cars = Car.getEntities()
         
-        do {
-            let car = try context.fetch(fetchRequest)
-            print("\nВ БД при запуске следующие данные:")
-            car.forEach { car in
-                print("\(car.name!) \(car.costPriceInRuble) \(car.costPriceInEuro) \(car.earning)")
-            }
-        } catch let error {
-            print(error)
+        print("\nВ БД при запуске следующие данные:")
+        cars.forEach {
+            print("\($0.name) \($0.costPriceInRuble) \($0.costPriceInEuro) \($0.earning) \($0.comeData)")
         }
     }
 }
