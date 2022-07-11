@@ -31,7 +31,7 @@ class NewCarPageViewModel {
                          costPriceInRuble: event.element?.1,
                          costPriceInEuro: event.element?.2,
                          earning: event.element?.3)
-            print(event.element!)
+            print("Созданный элемент: \n\(event.element!)")
         }).disposed(by: disposeBag)
     }
 }
