@@ -15,11 +15,18 @@ public class Car: NSManagedObject {
     static let entityName = "Car"
     static let context = CoreDataManager.shared.context
     
-    lazy var fetchRequest: NSFetchRequest<Car> = {
-        let fetchRequest = NSFetchRequest<Car>(entityName: Self.entityName)
-//        let sort = NSSortDescriptor(key: "name", ascending: true)
-//        fetchRequest.sortDescriptors = [sort]
+    static var fetchReq: NSFetchRequest<Car> = {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        let predicate = NSPredicate(format: "%K != %@", "name", "")
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        fetchRequest.predicate = predicate
         return fetchRequest
+    }()
+    
+    static var resultController: NSFetchedResultsController<Car> = {
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchReq, managedObjectContext: CoreDataManager.shared.context, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
     }()
     
     convenience init() {
@@ -31,20 +38,10 @@ public class Car: NSManagedObject {
         
         self.init(entity: entity,
                   insertInto: Self.context)
-        
-//        initFetchResultController()
     }
 }
 
 extension Car {
-    func getFetchResultController() {
-//        fetchedResultsController = NSFetchedResultsController<NSFetchRequestResult>(
-//           fetchRequest: NSFetchRequest(entityName: Self.entityName),
-//           managedObjectContext: CoreDataManager.shared.context,
-//           sectionNameKeyPath: nil,
-//           cacheName: nil)
-    }
-    
     func saveData(name: String?,
                   costPriceInRuble: String?,
                   costPriceInEuro: String?,
@@ -63,12 +60,11 @@ extension Car {
     }
     
     static func getEntities() -> [Car] {
-        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
         let predicate = NSPredicate(format: "%K != %@", "name", "")
-        fetchRequest.predicate = predicate
+        fetchReq.predicate = predicate
         
         do {
-            let car = try CoreDataManager.shared.context.fetch(fetchRequest)
+            let car = try CoreDataManager.shared.context.fetch(fetchReq)
             
             return car
         } catch let error {
@@ -78,13 +74,7 @@ extension Car {
     }
     
     static func deleteCar(withIndexPath indexPath: IndexPath) {
-        let fetchedResultsController = NSFetchedResultsController<NSFetchRequestResult>(
-            fetchRequest: NSFetchRequest(entityName: Self.entityName),
-            managedObjectContext: CoreDataManager.shared.context,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-
-        guard let entity = fetchedResultsController.object(at: indexPath) as? NSManagedObject else {return}
+        guard let entity = resultController.object(at: indexPath) as? NSManagedObject else {return}
         context.delete(entity)
         
         CoreDataManager.shared.saveContext()

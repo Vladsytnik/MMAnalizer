@@ -28,6 +28,7 @@ class NewCarPageViewController: UIViewController {
         configureDelegates()
         hideKeyboardWhenTappedAround()
         configureButtonActions()
+//        bindingViewModel()
     }
     
     // MARK: - Functions

@@ -56,15 +56,6 @@ class CoreDataManager {
             }
         }
     }
-    
-    func fetchedResultsController(entityName: String) -> NSFetchedResultsController<Car> {
-        let fetchRequest = NSFetchRequest<Car>(entityName: entityName)
-        let sort = NSSortDescriptor(key: "name", ascending: true)
-        
-        fetchRequest.sortDescriptors = [sort]
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.context, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultsController
-    }
 }
 
 extension CoreDataManager {

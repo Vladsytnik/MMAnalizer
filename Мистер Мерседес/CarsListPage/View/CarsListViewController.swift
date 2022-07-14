@@ -16,26 +16,14 @@ class CarsListViewController: UIViewController {
 
     let viewModel: CarsListViewModel
     let carsListView = CarsListView()
-    var controller: NSFetchedResultsController<Car>?
-    
-    var cars: [Car] = []
+    var resultController: NSFetchedResultsController<Car>?
     
     // MARK: - init
     init(viewModel: CarsListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
-        controller = CoreDataManager
-            .shared
-            .fetchedResultsController(entityName: "Car")
-        controller?.delegate = self
-        do {
-            try controller?.performFetch()
-        } catch {
-            fatalError("Failed to fetch entities: \(error)")
-        }
-        
-        initCars()
+        initNSFetchResultController()
         configureTableView()
     }
 
@@ -56,10 +44,6 @@ class CarsListViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func initCars() {
-        cars = Car.getEntities()
-    }
-    
     func configureTableView() {
         carsListView.tableView.dataSource = self
         carsListView.tableView.delegate = self
@@ -81,6 +65,16 @@ class CarsListViewController: UIViewController {
         self.navigationItem
             .rightBarButtonItem = carsListView.newCarButtonItem
     }
+    
+    func initNSFetchResultController() {
+        resultController = Car.resultController
+        resultController?.delegate = self
+        do {
+            try resultController?.performFetch()
+        } catch {
+            fatalError("Failed to fetch entities: \(error)")
+        }
+    }
 
 }
 
@@ -97,16 +91,16 @@ extension CarsListViewController {
 extension CarsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        guard let sections = controller?.sections else {return 0}
+        guard let sections = resultController?.sections else {return 0}
         return sections[section].numberOfObjects
     }
 
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let car = cars[indexPath.row]
+        guard let car = resultController?.object(at: indexPath) else { return UITableViewCell() }
+        
         let cell = tableView
             .dequeueReusableCell(withIdentifier: Constant.cellID)
-        guard let car = controller?.object(at: indexPath) else { return UITableViewCell() }
         cell?.textLabel?.text = car.name
         cell?.imageView?.image = UIImage(systemName: "car")
         return cell ?? UITableViewCell()
@@ -143,15 +137,23 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        guard let indexPath = indexPath else {return}
+        
         switch type {
         case .insert:
             print("вставка")
         case .delete:
-            break
+            carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
         case .move:
             break
         case .update:
             break
+        @unknown default:
+            break
         }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        carsListView.tableView.endUpdates()
     }
 }
