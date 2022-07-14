@@ -16,6 +16,7 @@ extension ObservableType {
      - parameter observers: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
+    @discardableResult
     public func bind<Observer: ObserverType>(to observers: Observer...) -> Disposable where Observer.Element == Element {
         self.subscribe { event in
             observers.forEach { $0.on(event) }

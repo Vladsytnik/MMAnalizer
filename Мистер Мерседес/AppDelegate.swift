@@ -45,7 +45,7 @@ extension AppDelegate {
         
         print("\nВ БД при запуске следующие данные:")
         cars.forEach {
-            print("\($0.name) \($0.costPriceInRuble) \($0.costPriceInEuro) \($0.earning) \($0.comeData)")
+            print("\($0.name) \($0.costPriceInRuble) \($0.costPriceInEuro) \($0.earning) \($0.comeData ?? Date())")
         }
     }
 }

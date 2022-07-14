@@ -76,6 +76,7 @@ extension ObservableType {
      gracefully completed, errored, or if the generation is canceled by disposing subscription).
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
+    @discardableResult
     public func subscribe(
         onNext: ((Element) -> Void)? = nil,
         onError: ((Swift.Error) -> Void)? = nil,

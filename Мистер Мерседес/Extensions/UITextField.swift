@@ -23,4 +23,8 @@ extension UITextField {
     @objc func clickDone() {
         self.resignFirstResponder()
     }
+    
+    func isEmpty() -> Bool {
+        self.text == ""
+    }
 }

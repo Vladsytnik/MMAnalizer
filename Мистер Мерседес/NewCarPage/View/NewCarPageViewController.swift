@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class NewCarPageViewController: UIViewController {
     
@@ -13,6 +14,8 @@ class NewCarPageViewController: UIViewController {
     var textFields: [UITextField] = []
     
     let viewModel = NewCarPageViewModel()
+    
+    let disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -68,6 +71,40 @@ class NewCarPageViewController: UIViewController {
                        action: #selector(clickOnAddButton),
                        for: .touchUpInside)
     }
+    
+//    @objc func bindingViewModel() {
+//        newCarPageView
+//            .carNameTF
+//            .rx
+//            .text
+//            .orEmpty
+//            .bind(to: viewModel.carName)
+//            .disposed(by: disposeBag)
+//
+//        newCarPageView
+//            .carPriceInRubleTF
+//            .rx
+//            .text
+//            .orEmpty
+//            .bind(to: viewModel.carPriceInRuble)
+//            .disposed(by: disposeBag)
+//
+//        newCarPageView
+//            .carPriceInEuroTF
+//            .rx
+//            .text
+//            .orEmpty
+//            .bind(to: viewModel.carPriceInEuro)
+//            .disposed(by: disposeBag)
+//
+//        newCarPageView
+//            .carEarningsTF
+//            .rx
+//            .text
+//            .orEmpty
+//            .bind(to: viewModel.carEarnings)
+//            .disposed(by: disposeBag)
+//    }
 }
 
 // MARK: - Actions
@@ -75,12 +112,31 @@ extension NewCarPageViewController {
     @objc func clickOnCancelButton() {
         navigationController?.popViewController(animated: true)
     }
+    
     @objc func clickOnAddButton() {
+        if newCarPageView.carNameTF.isEmpty() {
+            showAlert()
+            return
+        }
+        
         navigationController?.popViewController(animated: true)
         viewModel.carName.onNext(newCarPageView.carNameTF.text!)
         viewModel.carEarnings.onNext(newCarPageView.carEarningsTF.text!)
         viewModel.carPriceInEuro.onNext(newCarPageView.carPriceInEuroTF.text!)
         viewModel.carPriceInRuble.onNext(newCarPageView.carPriceInRubleTF.text!)
+    }
+    
+    func showAlert() {
+        let title = "Упс 😵‍💫"
+        let message = "Невозможно добавить новый автомобиль без его номера. Пожалуйста, заполните поле Номер"
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Заполнить"), style: .default, handler: {_ in
+            self.newCarPageView.carNameTF.becomeFirstResponder()
+        })
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

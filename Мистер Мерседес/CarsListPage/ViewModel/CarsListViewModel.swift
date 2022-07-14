@@ -6,7 +6,20 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class CarsListViewModel {
+    
+//    let deleteCar = ReplaySubject<IndexPath>.create(bufferSize: 1)
 
+    init() {
+//        deleteCarFromDB()
+    }
+    
+//    func deleteCarFromDB() {
+//        deleteCar.subscribe { indexPath in
+//            Car.deleteCar(withIndexPath: indexPath)
+//        }
+//    }
 }
