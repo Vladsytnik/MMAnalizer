@@ -15,7 +15,7 @@ class CarsListViewController: UIViewController {
     }
 
     let viewModel: CarsListViewModel
-    let carsListView = CarsListView()
+    var carsListView = CarsListView()
     var resultController: NSFetchedResultsController<Car>?
     
     // MARK: - init
@@ -66,6 +66,12 @@ class CarsListViewController: UIViewController {
             .rightBarButtonItem = carsListView.newCarButtonItem
     }
     
+    func checkCarsCount() {
+        carsListView.emptyCarsListLabel.rx.isHidden.onNext(
+            resultController?.fetchedObjects?.count != 0
+        )
+    }
+    
     func initNSFetchResultController() {
         resultController = Car.resultController
         resultController?.delegate = self
@@ -75,7 +81,6 @@ class CarsListViewController: UIViewController {
             fatalError("Failed to fetch entities: \(error)")
         }
     }
-
 }
 
 // MARK: - Actions
@@ -91,6 +96,7 @@ extension CarsListViewController {
 extension CarsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
+        checkCarsCount()
         guard let sections = resultController?.sections else {return 0}
         return sections[section].numberOfObjects
     }
@@ -107,7 +113,7 @@ extension CarsListViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - Delegates
+// MARK: - Delegate
 extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControllerDelegate {
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -131,23 +137,30 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
             return
         }
     }
-    
+}
+
+// MARK: - Controller
+extension CarsListViewController {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         carsListView.tableView.beginUpdates()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        guard let indexPath = indexPath else {return}
         
         switch type {
         case .insert:
-            print("вставка")
+            guard let newIndexPath = newIndexPath else {return}
+            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .delete:
+            guard let indexPath = indexPath else {return}
             carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
         case .move:
-            break
+            guard let indexPath = indexPath else {return}
+            carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
+            guard let newIndexPath = newIndexPath else {return}
+            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .update:
-            break
+           break
         @unknown default:
             break
         }

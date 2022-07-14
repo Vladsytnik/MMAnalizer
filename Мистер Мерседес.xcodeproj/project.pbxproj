@@ -79,7 +79,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		011D2512287B2772001141CD /* DB */ = {
+		011D2512287B2772001141CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				011D2513287C4F07001141CD /* Car+CoreDataClass.swift */,
@@ -87,7 +87,7 @@
 				011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */,
 				011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */,
 			);
-			path = DB;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0197B7CC2874428D004F767C = {
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				01E3A51F287B22B400B15201 /* CoreDataManager.swift */,
-				011D2512287B2772001141CD /* DB */,
+				011D2512287B2772001141CD /* Models */,
 				01FD40CB28775D5E002F7F97 /* Colors */,
 				0197B7EC28744DE4004F767C /* Extensions */,
 				0197B7F1287458AD004F767C /* Coordinator */,

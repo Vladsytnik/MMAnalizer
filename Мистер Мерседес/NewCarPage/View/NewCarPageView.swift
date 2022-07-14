@@ -10,7 +10,7 @@ import SnapKit
 
 class NewCarPageView: UIView {
     
-    struct Constant {
+    struct Constants {
         static var btnCornerRadius: CGFloat = 8
         static var addButtonColor = Colors.blueButton
         static var cancelButtonColor = Colors.grayButton
@@ -18,6 +18,11 @@ class NewCarPageView: UIView {
         static var spacingBetweenButtons: CGFloat = 40
         static var buttonWidth = 135
         static var buttonHeight = 40
+        
+        static var carNamePlaceholder = "Номер (R11):"
+        static var carPriceInRublePlaceholder = "Себестоимость [р]:"
+        static var carPriceInEuroPlaceholder = "Себестоимость [€]:"
+        static var carEarningsPlaceholder = "Выручка:"
     }
     
 //    lazy var scrollView: UIScrollView = {
@@ -30,8 +35,8 @@ class NewCarPageView: UIView {
     lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Добавить", for: .normal)
-        button.backgroundColor = Constant.addButtonColor
-        button.layer.cornerRadius = Constant.btnCornerRadius
+        button.backgroundColor = Constants.addButtonColor
+        button.layer.cornerRadius = Constants.btnCornerRadius
         button.setTitleColor(.white, for: .normal)
         return button
     }()
@@ -39,22 +44,22 @@ class NewCarPageView: UIView {
     lazy var cancelButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Отменить", for: .normal)
-        button.backgroundColor = Constant.cancelButtonColor
-        button.layer.cornerRadius = Constant.btnCornerRadius
+        button.backgroundColor = Constants.cancelButtonColor
+        button.layer.cornerRadius = Constants.btnCornerRadius
         button.setTitleColor(.white, for: .normal)
         return button
     }()
     
     lazy var carNameTF: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Номер (R11):"
+        textField.placeholder = Constants.carNamePlaceholder
         textField.returnKeyType = .continue
         return textField
     }()
     
     lazy var carPriceInRubleTF: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Себестоимость [р]:"
+        textField.placeholder = Constants.carPriceInRublePlaceholder
         textField.returnKeyType = .continue
         textField.setupToolBar()
         textField.keyboardType = .decimalPad
@@ -63,7 +68,7 @@ class NewCarPageView: UIView {
     
     lazy var carPriceInEuroTF: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Себестоимость [€]:"
+        textField.placeholder = Constants.carPriceInEuroPlaceholder
         textField.returnKeyType = .continue
         textField.setupToolBar()
         textField.keyboardType = .decimalPad
@@ -72,7 +77,7 @@ class NewCarPageView: UIView {
     
     lazy var carEarningsTF: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Выручка:"
+        textField.placeholder = Constants.carEarningsPlaceholder
         textField.returnKeyType = .done
         textField.setupToolBar()
         textField.keyboardType = .decimalPad
@@ -82,14 +87,14 @@ class NewCarPageView: UIView {
     lazy var stackViewForTextField: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = Constant.spacingBetweenTextFields
+        stackView.spacing = Constants.spacingBetweenTextFields
         return stackView
     }()
     
     lazy var stackViewForButton: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = Constant.spacingBetweenButtons
+        stackView.spacing = Constants.spacingBetweenButtons
         return stackView
     }()
     
@@ -143,13 +148,13 @@ extension NewCarPageView {
         stackViewForButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-70)
             make.centerX.equalToSuperview()
-            make.height.equalTo(Constant.buttonHeight)
+            make.height.equalTo(Constants.buttonHeight)
         }
         cancelButton.snp.makeConstraints { make in
-            make.width.equalTo(Constant.buttonWidth)
+            make.width.equalTo(Constants.buttonWidth)
         }
         addButton.snp.makeConstraints { make in
-            make.width.equalTo(Constant.buttonWidth)
+            make.width.equalTo(Constants.buttonWidth)
         }
         [carNameTF, carEarningsTF, carPriceInEuroTF, carPriceInRubleTF]
             .forEach {

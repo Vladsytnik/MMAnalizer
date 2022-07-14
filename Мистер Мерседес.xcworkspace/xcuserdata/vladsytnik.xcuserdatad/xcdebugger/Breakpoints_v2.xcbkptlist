@@ -55,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "99CFC40D-8D8A-4AAF-8870-DB0F8E068B24"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/CarsListPage/ViewModel/CarsListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "CarsListViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "51730154-81E1-4713-8509-D77849715D60"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -94,10 +78,10 @@
             filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/CarsListPage/View/CarsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,9 +94,25 @@
             filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/CarsListPage/View/CarsListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64AEC91A-3ECA-47C1-9F8A-A7B00E2EF9CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x41c;&#x438;&#x441;&#x442;&#x435;&#x440; &#x41c;&#x435;&#x440;&#x441;&#x435;&#x434;&#x435;&#x441;/CarsListPage/View/CarsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "checkCarsCount()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
