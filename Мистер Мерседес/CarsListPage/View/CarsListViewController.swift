@@ -15,7 +15,7 @@ class CarsListViewController: UIViewController {
     }
 
     let viewModel: CarsListViewModel
-    let carsListView = CarsListView()
+    var carsListView = CarsListView()
     var resultController: NSFetchedResultsController<Car>?
     
     // MARK: - init
@@ -25,6 +25,7 @@ class CarsListViewController: UIViewController {
         
         initNSFetchResultController()
         configureTableView()
+        checkCarsCount()
     }
 
     required init?(coder: NSCoder) {
@@ -66,6 +67,15 @@ class CarsListViewController: UIViewController {
             .rightBarButtonItem = carsListView.newCarButtonItem
     }
     
+    func checkCarsCount() {
+        guard let count = resultController?.fetchedObjects?.count else {return}
+        if count > 0 {
+            carsListView.emptyCarsListLabel.rx.alpha.onNext(0)
+        } else {
+            carsListView.emptyCarsListLabel.rx.alpha.onNext(1)
+        }
+    }
+    
     func initNSFetchResultController() {
         resultController = Car.resultController
         resultController?.delegate = self
@@ -75,7 +85,6 @@ class CarsListViewController: UIViewController {
             fatalError("Failed to fetch entities: \(error)")
         }
     }
-
 }
 
 // MARK: - Actions
@@ -137,17 +146,22 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        guard let indexPath = indexPath else {return}
+        checkCarsCount()
         
         switch type {
         case .insert:
-            print("вставка")
+            guard let newIndexPath = newIndexPath else {return}
+            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .delete:
+            guard let indexPath = indexPath else {return}
             carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
         case .move:
-            break
+            guard let indexPath = indexPath else {return}
+            carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
+            guard let newIndexPath = newIndexPath else {return}
+            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .update:
-            break
+           break
         @unknown default:
             break
         }
