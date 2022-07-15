@@ -113,8 +113,8 @@
 		011D25502881CA25001141CD /* CarDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				011D25512881CA4C001141CD /* CarDetailsView.swift */,
 				011D25532881CA60001141CD /* CarDetailsViewController.swift */,
+				011D25512881CA4C001141CD /* CarDetailsView.swift */,
 			);
 			path = CarDetailsView;
 			sourceTree = "<group>";

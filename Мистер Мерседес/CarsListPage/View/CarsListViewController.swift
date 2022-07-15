@@ -137,6 +137,13 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
             return
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = CarDetailsViewController()
+        viewController.title = resultController?.object(at: indexPath).name
+        navigationController?.pushViewController(viewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - Controller

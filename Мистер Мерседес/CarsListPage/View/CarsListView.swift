@@ -13,6 +13,7 @@ class CarsListView: UIView {
     struct Constants {
         static let textThenCarsListIsEmpty = "Пока нет ни одного добавленного автомобиля :("
         static let widthForEmptyCarsListLabel = 300
+        static let cellID = "cellForCarsList"
     }
 
     lazy var tableView: UITableView  = {
