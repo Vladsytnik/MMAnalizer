@@ -11,6 +11,8 @@
 		011D2518287C4F07001141CD /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2514287C4F07001141CD /* Car+CoreDataProperties.swift */; };
 		011D2519287C4F07001141CD /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */; };
 		011D251A287C4F07001141CD /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */; };
+		011D25522881CA4C001141CD /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D25512881CA4C001141CD /* CarDetailsView.swift */; };
+		011D25542881CA60001141CD /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D25532881CA60001141CD /* CarDetailsViewController.swift */; };
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
 		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		011D2514287C4F07001141CD /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		011D2515287C4F07001141CD /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		011D25512881CA4C001141CD /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
+		011D25532881CA60001141CD /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		011D254E2881C9FF001141CD /* CarDetails */ = {
+			isa = PBXGroup;
+			children = (
+				011D254F2881CA14001141CD /* CarDetailsViewModel */,
+				011D25502881CA25001141CD /* CarDetailsView */,
+			);
+			path = CarDetails;
+			sourceTree = "<group>";
+		};
+		011D254F2881CA14001141CD /* CarDetailsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CarDetailsViewModel;
+			sourceTree = "<group>";
+		};
+		011D25502881CA25001141CD /* CarDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				011D25512881CA4C001141CD /* CarDetailsView.swift */,
+				011D25532881CA60001141CD /* CarDetailsViewController.swift */,
+			);
+			path = CarDetailsView;
+			sourceTree = "<group>";
+		};
 		0197B7CC2874428D004F767C = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +150,7 @@
 				0197B7FC287465D2004F767C /* ViewModel */,
 				0197B7FD28746624004F767C /* CarsListPage */,
 				01FD40C428774933002F7F97 /* NewCarPage */,
+				011D254E2881C9FF001141CD /* CarDetails */,
 				0197B7F4287459D6004F767C /* MonthlyAnalize */,
 				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
@@ -385,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011D25522881CA4C001141CD /* CarDetailsView.swift in Sources */,
 				01FD40CF28782587002F7F97 /* UIStackVIew.swift in Sources */,
 				0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */,
 				01FD40C828774A6B002F7F97 /* NewCarPageViewController.swift in Sources */,
@@ -404,6 +435,7 @@
 				01E3A51E287B10B200B15201 /* NewCarPageViewModel.swift in Sources */,
 				011D2518287C4F07001141CD /* Car+CoreDataProperties.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
+				011D25542881CA60001141CD /* CarDetailsViewController.swift in Sources */,
 				0197B803287468A7004F767C /* CarsListFlow.swift in Sources */,
 				0197B801287466F3004F767C /* CarsListViewModel.swift in Sources */,
 				011D2519287C4F07001141CD /* Sale+CoreDataClass.swift in Sources */,

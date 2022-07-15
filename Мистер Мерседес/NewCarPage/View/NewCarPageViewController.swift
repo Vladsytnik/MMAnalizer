@@ -28,7 +28,6 @@ class NewCarPageViewController: UIViewController {
         configureDelegates()
         hideKeyboardWhenTappedAround()
         configureButtonActions()
-//        bindingViewModel()
     }
     
     // MARK: - Functions
@@ -72,40 +71,6 @@ class NewCarPageViewController: UIViewController {
                        action: #selector(clickOnAddButton),
                        for: .touchUpInside)
     }
-    
-//    @objc func bindingViewModel() {
-//        newCarPageView
-//            .carNameTF
-//            .rx
-//            .text
-//            .orEmpty
-//            .bind(to: viewModel.carName)
-//            .disposed(by: disposeBag)
-//
-//        newCarPageView
-//            .carPriceInRubleTF
-//            .rx
-//            .text
-//            .orEmpty
-//            .bind(to: viewModel.carPriceInRuble)
-//            .disposed(by: disposeBag)
-//
-//        newCarPageView
-//            .carPriceInEuroTF
-//            .rx
-//            .text
-//            .orEmpty
-//            .bind(to: viewModel.carPriceInEuro)
-//            .disposed(by: disposeBag)
-//
-//        newCarPageView
-//            .carEarningsTF
-//            .rx
-//            .text
-//            .orEmpty
-//            .bind(to: viewModel.carEarnings)
-//            .disposed(by: disposeBag)
-//    }
 }
 
 // MARK: - Actions
