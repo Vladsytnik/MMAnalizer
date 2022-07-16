@@ -13,10 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var coordinator: Coordinator?
-    let tabBarController = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        let tabBarController = UITabBarController()
+
         coordinator = Coordinator(with: tabBarController)
 
         window = UIWindow(frame: UIScreen.main.bounds )

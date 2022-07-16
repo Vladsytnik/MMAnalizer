@@ -24,13 +24,6 @@ class NewCarPageView: UIView {
         static var carPriceInEuroPlaceholder = "Себестоимость [€]:"
         static var carEarningsPlaceholder = "Выручка:"
     }
-    
-//    lazy var scrollView: UIScrollView = {
-//        let scrollView = UIScrollView()
-//        scrollView.showsVerticalScrollIndicator = false
-//        scrollView.showsHorizontalScrollIndicator = false
-//        return scrollView
-//    }()
 
     lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
