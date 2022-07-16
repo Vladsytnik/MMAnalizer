@@ -1,17 +1,17 @@
 //
-//  CarsListFlow.swift
+//  SalesFlow.swift
 //  Мистер Мерседес
 //
-//  Created by Vlad Sytnik on 05.07.2022.
+//  Created by Vlad Sytnik on 16.07.2022.
 //
 
 import Foundation
 import UIKit
 
-class CarsListFlow {
-
-    var carsListViewController: CarsListViewController
-    var carsListViewModel: CarsListViewModel
+class SalesFlow {
+    
+    var salesViewController: SalesViewController
+    var salesViewModel: SalesViewModel
 
     let navController: UINavigationController
 
@@ -19,9 +19,9 @@ class CarsListFlow {
     init(navController: UINavigationController) {
         self.navController = navController
 
-        self.carsListViewModel = CarsListViewModel()
-        self.carsListViewController = CarsListViewController(
-            viewModel: carsListViewModel
+        self.salesViewModel = SalesViewModel()
+        self.salesViewController = SalesViewController(
+            viewModel: salesViewModel
         )
 
         start()
@@ -29,9 +29,9 @@ class CarsListFlow {
     }
 }
 
-extension CarsListFlow {
+extension SalesFlow {
     func start() {
-        navController.append(viewController: carsListViewController)
+        navController.append(viewController: salesViewController)
     }
 
     func configureNavigationController() {
