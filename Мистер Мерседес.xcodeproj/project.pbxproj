@@ -97,26 +97,26 @@
 		011D254E2881C9FF001141CD /* CarDetails */ = {
 			isa = PBXGroup;
 			children = (
-				011D254F2881CA14001141CD /* CarDetailsViewModel */,
-				011D25502881CA25001141CD /* CarDetailsView */,
+				011D254F2881CA14001141CD /* ViewModel */,
+				011D25502881CA25001141CD /* View */,
 			);
 			path = CarDetails;
 			sourceTree = "<group>";
 		};
-		011D254F2881CA14001141CD /* CarDetailsViewModel */ = {
+		011D254F2881CA14001141CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = CarDetailsViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		011D25502881CA25001141CD /* CarDetailsView */ = {
+		011D25502881CA25001141CD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				011D25532881CA60001141CD /* CarDetailsViewController.swift */,
 				011D25512881CA4C001141CD /* CarDetailsView.swift */,
 			);
-			path = CarDetailsView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0197B7CC2874428D004F767C = {
@@ -147,7 +147,6 @@
 				0197B7EC28744DE4004F767C /* Extensions */,
 				0197B7F1287458AD004F767C /* Coordinator */,
 				0197B7F92874601A004F767C /* Flows */,
-				0197B7FC287465D2004F767C /* ViewModel */,
 				0197B7FD28746624004F767C /* CarsListPage */,
 				01FD40C428774933002F7F97 /* NewCarPage */,
 				011D254E2881C9FF001141CD /* CarDetails */,
@@ -196,13 +195,6 @@
 				0197B802287468A7004F767C /* CarsListFlow.swift */,
 			);
 			path = Flows;
-			sourceTree = "<group>";
-		};
-		0197B7FC287465D2004F767C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0197B7FD28746624004F767C /* CarsListPage */ = {
