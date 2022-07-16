@@ -15,12 +15,13 @@ class Coordinator {
     
     let carsNavController = UINavigationController()
     let monthlyAnalisisNavController = UINavigationController()
+    let salesNavController = UINavigationController()
 
     init(with tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
         
         configureTabBarItems()
-        addNavControllersInTabBar()
+        setupNavControllers()
         
         self.mainFlow = MainFlow(tabBar: tabBarController)
     }
@@ -30,9 +31,11 @@ extension Coordinator {
     func configureTabBarItems() {
         let carsImage = UIImage(systemName: "list.bullet")
         let profitImage = UIImage(systemName: "dollarsign.square")
+        let salesImage = UIImage(systemName: "plus.app")
         
         let carsTitle = "Автомобили"
         let totalProfitTitle = "Прибыль"
+        let salesTitle = "Продажи"
         
         carsNavController
             .tabBarItem = UITabBarItem(
@@ -46,9 +49,19 @@ extension Coordinator {
                 image: profitImage,
                 selectedImage: profitImage
             )
+        salesNavController
+            .tabBarItem = UITabBarItem(
+                title: salesTitle,
+                image: salesImage,
+                selectedImage: salesImage
+            )
     }
     
-    func addNavControllersInTabBar() {
-        self.tabBarController.viewControllers = [carsNavController, monthlyAnalisisNavController]
+    func setupNavControllers() {
+        self.tabBarController.viewControllers = [
+            salesNavController,
+            carsNavController,
+            monthlyAnalisisNavController
+        ]
     }
 }

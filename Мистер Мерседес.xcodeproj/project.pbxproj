@@ -13,6 +13,10 @@
 		011D251A287C4F07001141CD /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */; };
 		011D25522881CA4C001141CD /* CarDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D25512881CA4C001141CD /* CarDetailsView.swift */; };
 		011D25542881CA60001141CD /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D25532881CA60001141CD /* CarDetailsViewController.swift */; };
+		011D25562882BC7A001141CD /* SalesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D25552882BC7A001141CD /* SalesFlow.swift */; };
+		011D255C2882BD57001141CD /* SalesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255B2882BD57001141CD /* SalesViewModel.swift */; };
+		011D255E2882BD7D001141CD /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255D2882BD7D001141CD /* SalesViewController.swift */; };
+		011D25602882BD8E001141CD /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255F2882BD8E001141CD /* SalesView.swift */; };
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
 		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
@@ -44,6 +48,10 @@
 		011D2516287C4F07001141CD /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		011D25512881CA4C001141CD /* CarDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsView.swift; sourceTree = "<group>"; };
 		011D25532881CA60001141CD /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
+		011D25552882BC7A001141CD /* SalesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesFlow.swift; sourceTree = "<group>"; };
+		011D255B2882BD57001141CD /* SalesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewModel.swift; sourceTree = "<group>"; };
+		011D255D2882BD7D001141CD /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
+		011D255F2882BD8E001141CD /* SalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesView.swift; sourceTree = "<group>"; };
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
@@ -97,26 +105,64 @@
 		011D254E2881C9FF001141CD /* CarDetails */ = {
 			isa = PBXGroup;
 			children = (
-				011D254F2881CA14001141CD /* CarDetailsViewModel */,
-				011D25502881CA25001141CD /* CarDetailsView */,
+				011D254F2881CA14001141CD /* ViewModel */,
+				011D25502881CA25001141CD /* View */,
 			);
 			path = CarDetails;
 			sourceTree = "<group>";
 		};
-		011D254F2881CA14001141CD /* CarDetailsViewModel */ = {
+		011D254F2881CA14001141CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = CarDetailsViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		011D25502881CA25001141CD /* CarDetailsView */ = {
+		011D25502881CA25001141CD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				011D25532881CA60001141CD /* CarDetailsViewController.swift */,
 				011D25512881CA4C001141CD /* CarDetailsView.swift */,
 			);
-			path = CarDetailsView;
+			path = View;
+			sourceTree = "<group>";
+		};
+		011D25572882BCD0001141CD /* SalesPage */ = {
+			isa = PBXGroup;
+			children = (
+				011D25592882BD2A001141CD /* ViewModel */,
+				011D255A2882BD32001141CD /* View */,
+			);
+			path = SalesPage;
+			sourceTree = "<group>";
+		};
+		011D25582882BCE6001141CD /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				0197B7FD28746624004F767C /* CarsListPage */,
+				01FD40C428774933002F7F97 /* NewCarPage */,
+				011D254E2881C9FF001141CD /* CarDetails */,
+				011D25572882BCD0001141CD /* SalesPage */,
+				0197B7F4287459D6004F767C /* MonthlyAnalize */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		011D25592882BD2A001141CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				011D255B2882BD57001141CD /* SalesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		011D255A2882BD32001141CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				011D255D2882BD7D001141CD /* SalesViewController.swift */,
+				011D255F2882BD8E001141CD /* SalesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0197B7CC2874428D004F767C = {
@@ -147,11 +193,7 @@
 				0197B7EC28744DE4004F767C /* Extensions */,
 				0197B7F1287458AD004F767C /* Coordinator */,
 				0197B7F92874601A004F767C /* Flows */,
-				0197B7FC287465D2004F767C /* ViewModel */,
-				0197B7FD28746624004F767C /* CarsListPage */,
-				01FD40C428774933002F7F97 /* NewCarPage */,
-				011D254E2881C9FF001141CD /* CarDetails */,
-				0197B7F4287459D6004F767C /* MonthlyAnalize */,
+				011D25582882BCE6001141CD /* Pages */,
 				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
 				0197B7E12874428F004F767C /* Assets.xcassets */,
@@ -194,15 +236,9 @@
 			children = (
 				0197B7FA2874603E004F767C /* MainFlow.swift */,
 				0197B802287468A7004F767C /* CarsListFlow.swift */,
+				011D25552882BC7A001141CD /* SalesFlow.swift */,
 			);
 			path = Flows;
-			sourceTree = "<group>";
-		};
-		0197B7FC287465D2004F767C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0197B7FD28746624004F767C /* CarsListPage */ = {
@@ -424,6 +460,7 @@
 				0197B7EE28744E03004F767C /* UITabBarController.swift in Sources */,
 				0197B805287477CE004F767C /* UIView.swift in Sources */,
 				0197B7FB2874603E004F767C /* MainFlow.swift in Sources */,
+				011D25562882BC7A001141CD /* SalesFlow.swift in Sources */,
 				011D251A287C4F07001141CD /* Sale+CoreDataProperties.swift in Sources */,
 				011D2517287C4F07001141CD /* Car+CoreDataClass.swift in Sources */,
 				0197B7F02874582A004F767C /* Coordinator.swift in Sources */,
@@ -431,8 +468,11 @@
 				01FD40CD28775D68002F7F97 /* Colors.swift in Sources */,
 				01E3A51C287B03E700B15201 /* Model.xcdatamodeld in Sources */,
 				0197B7F628745A38004F767C /* CarsListView.swift in Sources */,
+				011D255C2882BD57001141CD /* SalesViewModel.swift in Sources */,
 				01E3A520287B22B400B15201 /* CoreDataManager.swift in Sources */,
+				011D255E2882BD7D001141CD /* SalesViewController.swift in Sources */,
 				01E3A51E287B10B200B15201 /* NewCarPageViewModel.swift in Sources */,
+				011D25602882BD8E001141CD /* SalesView.swift in Sources */,
 				011D2518287C4F07001141CD /* Car+CoreDataProperties.swift in Sources */,
 				0197B7F828745A6C004F767C /* UINavigationController.swift in Sources */,
 				011D25542881CA60001141CD /* CarDetailsViewController.swift in Sources */,
