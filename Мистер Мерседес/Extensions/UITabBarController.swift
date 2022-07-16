@@ -9,28 +9,6 @@ import Foundation
 import UIKit
 
 extension UITabBarController {
-    static var imagesForTabBars: [UIImage?] = [UIImage(systemName: "list.bullet"),
-                                               UIImage(systemName: "dollarsign.square")]
-    static var titlesForTabBars: [String] = ["Автомобили",
-                                             "Прибыль"]
-
-    func configure(withControllers navControllers: UINavigationController...) {
-        var tabBarIndex = 0
-
-        for navController in navControllers {
-            navController.tabBarItem = UITabBarItem(
-                title: UITabBarController.titlesForTabBars[tabBarIndex],
-                image: UITabBarController.imagesForTabBars[tabBarIndex],
-                selectedImage: UITabBarController.imagesForTabBars[tabBarIndex]
-            )
-            tabBarIndex += 1
-        }
-        self.viewControllers = navControllers
-    }
-}
-
-extension UITabBarController {
-
     static var navControllerIndex = 0
 
     func getNextNavController() -> UINavigationController? {

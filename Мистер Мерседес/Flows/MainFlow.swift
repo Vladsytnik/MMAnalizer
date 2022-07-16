@@ -11,12 +11,12 @@ import UIKit
 class MainFlow {
 
     var tabBarController: UITabBarController?
+    
     var carListNavController: UINavigationController?
     var monthlyAnalizeNavController: UINavigationController?
 
     init(tabBar: UITabBarController) {
         getNavControllersFrom(tabBar)
-
         guard let carListNavController = carListNavController else {return}
 
         _ = CarsListFlow(navController: carListNavController)
