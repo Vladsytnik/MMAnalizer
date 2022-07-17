@@ -17,6 +17,7 @@
 		011D255C2882BD57001141CD /* SalesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255B2882BD57001141CD /* SalesViewModel.swift */; };
 		011D255E2882BD7D001141CD /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255D2882BD7D001141CD /* SalesViewController.swift */; };
 		011D25602882BD8E001141CD /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D255F2882BD8E001141CD /* SalesView.swift */; };
+		011D2562288468D8001141CD /* CarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011D2561288468D8001141CD /* CarDataManager.swift */; };
 		0197B7D92874428D004F767C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7D82874428D004F767C /* AppDelegate.swift */; };
 		0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197B7DC2874428D004F767C /* CarsListViewController.swift */; };
 		0197B7E02874428D004F767C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197B7DE2874428D004F767C /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		011D255B2882BD57001141CD /* SalesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewModel.swift; sourceTree = "<group>"; };
 		011D255D2882BD7D001141CD /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
 		011D255F2882BD8E001141CD /* SalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesView.swift; sourceTree = "<group>"; };
+		011D2561288468D8001141CD /* CarDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataManager.swift; sourceTree = "<group>"; };
 		0197B7D52874428D004F767C /* Мистер Мерседес.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Мистер Мерседес.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197B7D82874428D004F767C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197B7DC2874428D004F767C /* CarsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		011D256328847255001141CD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01E3A51F287B22B400B15201 /* CoreDataManager.swift */,
+				011D2561288468D8001141CD /* CarDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0197B7CC2874428D004F767C = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +198,7 @@
 		0197B7D72874428D004F767C /* Мистер Мерседес */ = {
 			isa = PBXGroup;
 			children = (
-				01E3A51F287B22B400B15201 /* CoreDataManager.swift */,
+				011D256328847255001141CD /* Managers */,
 				011D2512287B2772001141CD /* Models */,
 				01FD40CB28775D5E002F7F97 /* Colors */,
 				0197B7EC28744DE4004F767C /* Extensions */,
@@ -451,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011D2562288468D8001141CD /* CarDataManager.swift in Sources */,
 				011D25522881CA4C001141CD /* CarDetailsView.swift in Sources */,
 				01FD40CF28782587002F7F97 /* UIStackVIew.swift in Sources */,
 				0197B7DD2874428D004F767C /* CarsListViewController.swift in Sources */,
