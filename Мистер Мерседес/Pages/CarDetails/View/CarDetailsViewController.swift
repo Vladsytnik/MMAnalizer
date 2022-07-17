@@ -38,7 +38,7 @@ class CarDetailsViewController: UIViewController {
     }
     
     func initNSFetchResultController() {
-        resultController = Car.resultController
+        resultController = CarDataManager.shared.resultController
         resultController?.delegate = self
         do {
             try resultController?.performFetch()

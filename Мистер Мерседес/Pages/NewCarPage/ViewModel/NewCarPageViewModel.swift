@@ -26,11 +26,14 @@ class NewCarPageViewModel {
     
     func userCreatedNewCar() {
         _ = Observable.zip(carName, carPriceInRuble, carPriceInEuro, carEarnings).subscribe({ event in
-            let car = Car()
-            car.saveData(name: event.element?.0,
-                         costPriceInRuble: event.element?.1,
-                         costPriceInEuro: event.element?.2,
-                         earning: event.element?.3)
+            CarDataManager
+                .shared
+                .saveData(
+                    name: event.element?.0,
+                    costPriceInRuble: event.element?.1,
+                    costPriceInEuro: event.element?.2,
+                    earning: event.element?.3
+                )
             print("Созданный элемент: \n\(event.element!)")
         }).disposed(by: disposeBag)
     }

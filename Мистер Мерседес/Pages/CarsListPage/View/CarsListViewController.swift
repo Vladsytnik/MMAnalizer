@@ -6,25 +6,26 @@
 //
 
 import UIKit
-import CoreData
 
 class CarsListViewController: UIViewController {
     
-    struct Constant {
+    struct Constants {
         static let cellID = "cellForCarsList"
+        static let heightForRow: CGFloat = 50
     }
 
     let viewModel: CarsListViewModel
     var carsListView = CarsListView()
-    var resultController: NSFetchedResultsController<Car>?
+    var cars: [Car] = []
     
     // MARK: - init
     init(viewModel: CarsListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
-        initNSFetchResultController()
+    
+        cars = CarDataManager.shared.getEntities()
         configureTableView()
+        CarDataManager.shared.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -49,7 +50,7 @@ class CarsListViewController: UIViewController {
         carsListView.tableView.delegate = self
         carsListView.tableView.register(
             UITableViewCell.self,
-            forCellReuseIdentifier: Constant.cellID
+            forCellReuseIdentifier: Constants.cellID
         )
     }
     
@@ -68,18 +69,8 @@ class CarsListViewController: UIViewController {
     
     func checkCarsCount() {
         carsListView.emptyCarsListLabel.rx.isHidden.onNext(
-            resultController?.fetchedObjects?.count != 0
+            cars.count != 0
         )
-    }
-    
-    func initNSFetchResultController() {
-        resultController = Car.resultController
-        resultController?.delegate = self
-        do {
-            try resultController?.performFetch()
-        } catch {
-            fatalError("Failed to fetch entities: \(error)")
-        }
     }
 }
 
@@ -97,27 +88,26 @@ extension CarsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         checkCarsCount()
-        guard let sections = resultController?.sections else {return 0}
-        return sections[section].numberOfObjects
+        return cars.count
     }
 
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let car = resultController?.object(at: indexPath) else { return UITableViewCell() }
+        let car = cars[indexPath.row]
         
         let cell = tableView
-            .dequeueReusableCell(withIdentifier: Constant.cellID)
+            .dequeueReusableCell(withIdentifier: Constants.cellID)
         cell?.textLabel?.text = car.name
         cell?.imageView?.image = UIImage(systemName: "car")
         return cell ?? UITableViewCell()
     }
 }
 
-// MARK: - Delegate
-extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControllerDelegate {
+// MARK: - TableView Delegate
+extension CarsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        Constants.heightForRow
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -127,8 +117,8 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-//            viewModel.deleteCar.onNext(indexPath)
-            Car.deleteCar(withIndexPath: indexPath)
+            CarDataManager.shared.deleteCar(from: &cars, withIndexPath: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         case .none:
             return
         case .insert:
@@ -140,40 +130,16 @@ extension CarsListViewController: UITableViewDelegate, NSFetchedResultsControlle
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = CarDetailsViewController()
-        viewController.title = resultController?.object(at: indexPath).name
+        viewController.title = cars[indexPath.row].name
         navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-// MARK: - Controller
-extension CarsListViewController {
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        carsListView.tableView.beginUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch type {
-        case .insert:
-            guard let newIndexPath = newIndexPath else {return}
-            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
-        case .delete:
-            guard let indexPath = indexPath else {return}
-            carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
-        case .move:
-            guard let indexPath = indexPath else {return}
-            carsListView.tableView.deleteRows(at: [indexPath], with: .automatic)
-            guard let newIndexPath = newIndexPath else {return}
-            carsListView.tableView.insertRows(at: [newIndexPath], with: .automatic)
-        case .update:
-           break
-        @unknown default:
-            break
-        }
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        carsListView.tableView.endUpdates()
+// MARK: - CarDataDelegate
+extension CarsListViewController: CarDataDelegate {
+    func insertCar(indexPath: IndexPath) {
+        cars = CarDataManager.shared.getEntities()
+        carsListView.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 }
