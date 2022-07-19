@@ -143,8 +143,8 @@
 			children = (
 				0197B7FD28746624004F767C /* CarsListPage */,
 				01FD40C428774933002F7F97 /* NewCarPage */,
-				011D254E2881C9FF001141CD /* CarDetails */,
 				011D25572882BCD0001141CD /* SalesPage */,
+				011D254E2881C9FF001141CD /* CarDetails */,
 				0197B7F4287459D6004F767C /* MonthlyAnalize */,
 			);
 			path = Pages;
@@ -176,6 +176,13 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		011D256428868BBC001141CD /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		0197B7CC2874428D004F767C = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +212,7 @@
 				0197B7F1287458AD004F767C /* Coordinator */,
 				0197B7F92874601A004F767C /* Flows */,
 				011D25582882BCE6001141CD /* Pages */,
+				011D256428868BBC001141CD /* Custom */,
 				0197B7D82874428D004F767C /* AppDelegate.swift */,
 				0197B7DE2874428D004F767C /* Main.storyboard */,
 				0197B7E12874428F004F767C /* Assets.xcassets */,

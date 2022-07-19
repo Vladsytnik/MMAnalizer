@@ -10,6 +10,7 @@ import UIKit
 class SalesViewController: UIViewController {
     
     let viewModel: SalesViewModel
+    let salesView = SalesView()
 
     init(viewModel: SalesViewModel) {
         self.viewModel = viewModel
@@ -18,6 +19,10 @@ class SalesViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        view = salesView
     }
     
     override func viewDidLoad() {
