@@ -13,13 +13,14 @@ class SalesViewController: UIViewController {
     
     let viewModel: SalesViewModel
     let salesView = SalesView()
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
 
     init(viewModel: SalesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
         configureTableView()
+//        bindingViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -55,32 +56,25 @@ extension SalesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesCell", for: indexPath) as? SalesTableViewCell else {return UITableViewCell()}
-        bindingViewModel(withCell: cell)
         return cell
     }
 }
 
 extension SalesViewController {
-    func bindingViewModel(withCell cell: SalesTableViewCell) {
-        cell
-            .priceTF
-            .rx
-            .text
-            .orEmpty
-            .bind(to: viewModel.price)
-        
-        viewModel
-            .output
-            .price
-            .drive(salesView.tableView.rx.items(cellIdentifier: "salesCell", cellType: SalesTableViewCell.self))
-//            .drive(salesView.tableView.rx.items(cellIdentifier: "salesCell"))
-//            .disposed(by: disposeBag)
-            
-    }
+//    func bindingViewModel() {
+//        let data = Observable<[String]>.just(["first element", "second element", "third element"])
+//        data
+//            .bind(to: salesView.tableView.rx.items(cellIdentifier: "salesCell", cellType: SalesTableViewCell.self)) { index, elem, cell in
+//            }
+//    }
 }
 
 extension SalesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         false
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }

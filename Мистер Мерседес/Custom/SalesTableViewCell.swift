@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SalesTableViewCell: UITableViewCell {
     
@@ -36,15 +38,24 @@ class SalesTableViewCell: UITableViewCell {
         let textField = UITextField()
         textField.placeholder = "Цена"
         textField.borderStyle = .roundedRect
-        textField.keyboardType = .decimalPad
-        textField.textColor = .systemPink
+        textField.keyboardType = .numberPad
+        textField.textColor = .white
         return textField
     }()
+    
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.layer.zPosition = 1
+        return label
+    }()
+    
+    var disposeBag = DisposeBag()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         addContraints()
+        setBinding()
     }
 
        required init?(coder aDecoder: NSCoder) {
@@ -57,9 +68,12 @@ class SalesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+      }
     
     func setupViews() {
         contentView
@@ -67,7 +81,9 @@ class SalesTableViewCell: UITableViewCell {
                 hStackView.appendArrangedSubviews(
                     carNameTF,
                     salesDescriptionTF,
-                    priceTF
+                    priceTF.appendSubviews(
+                        label
+                    )
                 )
             )
     }
@@ -86,5 +102,51 @@ class SalesTableViewCell: UITableViewCell {
         priceTF.snp.makeConstraints { make in
             make.width.equalTo(100)
         }
+        label.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+            make.top.bottom.equalToSuperview()
+        }
+    }
+    
+    func setBinding() {
+        priceTF
+            .rx
+            .text
+            .orEmpty
+            .map({ str in
+                if str.count > 0 {
+//                    self.insertNewRow()
+                    return self.formatPrice(from: str) + "₽"
+                }
+                return str
+            })
+            .bind(to: label
+                    .rx
+                    .text)
+        
+    }
+    
+    func formatPrice(from str: String) -> String {
+        var result = ""
+        let pattern = "\\d{1,3}(?=(\\d{3})+(?!\\d))"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: pattern)
+            
+            var range = NSRange()
+            range.location = 0
+            range.length = str.count
+            
+            result = regex.stringByReplacingMatches(in: str, options: [], range: range, withTemplate: "$0 ")
+        } catch let error {
+            print("error in regular expression: \(error)")
+        }
+        
+        return result
+    }
+    
+    func insertNewRow(completion: (()->()) ) {
+        completion()
     }
 }

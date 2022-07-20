@@ -23,4 +23,3 @@ public class Car: NSManagedObject {
                   insertInto: CarDataManager.shared.context)
     }
 }
-

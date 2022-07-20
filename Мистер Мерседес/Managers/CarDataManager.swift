@@ -98,6 +98,10 @@ extension CarDataManager {
     func getObject(withIndexPath indexPath: IndexPath) -> Car? {
         resultController.object(at: indexPath)
     }
+    
+    func addSale(withCarName name: String, description: String, and price: String) {
+        
+    }
 }
 
 extension CarDataManager {
