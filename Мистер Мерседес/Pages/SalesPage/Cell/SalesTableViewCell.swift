@@ -34,19 +34,9 @@ class SalesTableViewCell: UITableViewCell {
         return textField
     }()
     
-    lazy var priceTF: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Цена"
-        textField.borderStyle = .roundedRect
-        textField.keyboardType = .numberPad
-        textField.textColor = .white
+    lazy var priceTF: UIPriceTextField = {
+        let textField = UIPriceTextField()
         return textField
-    }()
-    
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.layer.zPosition = 1
-        return label
     }()
     
     var disposeBag = DisposeBag()
@@ -55,7 +45,7 @@ class SalesTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         addContraints()
-        setBinding()
+//        setBinding()
     }
 
        required init?(coder aDecoder: NSCoder) {
@@ -81,9 +71,7 @@ class SalesTableViewCell: UITableViewCell {
                 hStackView.appendArrangedSubviews(
                     carNameTF,
                     salesDescriptionTF,
-                    priceTF.appendSubviews(
-                        label
-                    )
+                    priceTF
                 )
             )
     }
@@ -102,51 +90,9 @@ class SalesTableViewCell: UITableViewCell {
         priceTF.snp.makeConstraints { make in
             make.width.equalTo(100)
         }
-        label.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(5)
-            make.trailing.equalToSuperview().offset(-5)
-            make.top.bottom.equalToSuperview()
-        }
     }
     
-    func setBinding() {
-        priceTF
-            .rx
-            .text
-            .orEmpty
-            .map({ str in
-                if str.count > 0 {
-//                    self.insertNewRow()
-                    return self.formatPrice(from: str) + "₽"
-                }
-                return str
-            })
-            .bind(to: label
-                    .rx
-                    .text)
-        
-    }
-    
-    func formatPrice(from str: String) -> String {
-        var result = ""
-        let pattern = "\\d{1,3}(?=(\\d{3})+(?!\\d))"
-        
-        do {
-            let regex = try NSRegularExpression(pattern: pattern)
-            
-            var range = NSRange()
-            range.location = 0
-            range.length = str.count
-            
-            result = regex.stringByReplacingMatches(in: str, options: [], range: range, withTemplate: "$0 ")
-        } catch let error {
-            print("error in regular expression: \(error)")
-        }
-        
-        return result
-    }
-    
-    func insertNewRow(completion: (()->()) ) {
-        completion()
-    }
+//    func insertNewRow(completion: (()->()) ) {
+//        completion()
+//    }
 }
