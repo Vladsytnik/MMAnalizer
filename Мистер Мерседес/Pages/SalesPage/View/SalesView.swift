@@ -7,8 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SalesView: UIView {
+    
+    struct Constants {
+        static let vSpacing: CGFloat = 8
+    }
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -20,6 +26,11 @@ class SalesView: UIView {
     lazy var view: UIView = {
         let view = UIView()
         return view
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -37,12 +48,16 @@ class SalesView: UIView {
     private func configure() {
         view.backgroundColor = .systemPink
     }
-    
+}
+
+extension SalesView {
     func setupViews() {
         appendSubviews(
             scrollView
                 .appendSubviews(
-                    view
+                    view.appendSubviews(
+                        tableView
+                    )
                 )
         )
     }
@@ -54,6 +69,9 @@ class SalesView: UIView {
         view.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
             make.width.height.equalTo(scrollView)
+        }
+        tableView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class CarDetailsViewController: UIViewController {
     
@@ -15,7 +14,6 @@ class CarDetailsViewController: UIViewController {
     }
     
     let carDetailsView = CarDetailsView()
-    var resultController: NSFetchedResultsController<Car>?
 
     override func loadView() {
         self.view = carDetailsView
@@ -30,7 +28,6 @@ class CarDetailsViewController: UIViewController {
     
     func configureTableView() {
         carDetailsView.tableView.dataSource = self
-        carDetailsView.tableView.delegate = self
         carDetailsView.tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: Constants.cellID
@@ -38,13 +35,6 @@ class CarDetailsViewController: UIViewController {
     }
     
     func initNSFetchResultController() {
-        resultController = CarDataManager.shared.resultController
-        resultController?.delegate = self
-        do {
-            try resultController?.performFetch()
-        } catch {
-            fatalError("Failed to fetch entities: \(error)")
-        }
     }
 }
 
@@ -58,13 +48,4 @@ extension CarDetailsViewController: UITableViewDataSource {
         cell?.textLabel?.text = "Месяц \(indexPath.row)"
         return cell ?? UITableViewCell()
     }
-    
-}
-
-extension CarDetailsViewController: UITableViewDelegate {
-    
-}
-
-extension CarDetailsViewController: NSFetchedResultsControllerDelegate {
-    
 }

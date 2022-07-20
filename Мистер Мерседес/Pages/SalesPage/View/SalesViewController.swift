@@ -6,15 +6,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SalesViewController: UIViewController {
     
     let viewModel: SalesViewModel
     let salesView = SalesView()
+    let disposeBag = DisposeBag()
 
     init(viewModel: SalesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        configureTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -34,5 +39,48 @@ class SalesViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "Продажи"
         self.navigationItem.backButtonTitle = "Назад"
+    }
+    
+    func configureTableView() {
+        salesView.tableView.dataSource = self
+        salesView.tableView.delegate = self
+        salesView.tableView.register(SalesTableViewCell.self, forCellReuseIdentifier: "salesCell")
+    }
+}
+
+extension SalesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesCell", for: indexPath) as? SalesTableViewCell else {return UITableViewCell()}
+        bindingViewModel(withCell: cell)
+        return cell
+    }
+}
+
+extension SalesViewController {
+    func bindingViewModel(withCell cell: SalesTableViewCell) {
+        cell
+            .priceTF
+            .rx
+            .text
+            .orEmpty
+            .bind(to: viewModel.price)
+        
+        viewModel
+            .output
+            .price
+            .drive(salesView.tableView.rx.items(cellIdentifier: "salesCell", cellType: SalesTableViewCell.self))
+//            .drive(salesView.tableView.rx.items(cellIdentifier: "salesCell"))
+//            .disposed(by: disposeBag)
+            
+    }
+}
+
+extension SalesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        false
     }
 }
