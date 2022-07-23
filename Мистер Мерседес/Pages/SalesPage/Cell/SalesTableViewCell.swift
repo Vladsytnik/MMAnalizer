@@ -20,10 +20,11 @@ class SalesTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    lazy var carNameTF: UITextField = {
-        let textField = UITextField()
+    lazy var carNameTF: UISearchTextField = {
+        let textField = UISearchTextField()
         textField.placeholder = "Номер"
         textField.borderStyle = .roundedRect
+        textField.setupToolBar()
         return textField
     }()
     
@@ -31,11 +32,14 @@ class SalesTableViewCell: UITableViewCell {
         let textField = UITextField()
         textField.placeholder = "Запчасть"
         textField.borderStyle = .roundedRect
+        textField.setupToolBar()
         return textField
     }()
     
     lazy var priceTF: UIPriceTextField = {
         let textField = UIPriceTextField()
+        textField.placeholder = "Цена"
+        textField.setupToolBar()
         return textField
     }()
     
@@ -51,10 +55,6 @@ class SalesTableViewCell: UITableViewCell {
        required init?(coder aDecoder: NSCoder) {
            fatalError("init(coder:) has not been implemented")
        }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

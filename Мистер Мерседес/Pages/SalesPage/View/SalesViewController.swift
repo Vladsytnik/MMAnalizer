@@ -40,6 +40,7 @@ class SalesViewController: UIViewController {
         self.view.backgroundColor = .white
         self.title = "Продажи"
         self.navigationItem.backButtonTitle = "Назад"
+        self.hideKeyboardWhenTappedAround()
     }
     
     func configureTableView() {
@@ -74,7 +75,7 @@ extension SalesViewController: UITableViewDelegate {
         false
     }
     
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        150
+//    }
 }

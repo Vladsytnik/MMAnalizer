@@ -46,7 +46,6 @@ class UIPriceTextField: UITextField {
     }
     
     func configure() {
-        self.placeholder = "Цена"
         self.borderStyle = .roundedRect
         self.keyboardType = .numberPad
         self.textColor = .white

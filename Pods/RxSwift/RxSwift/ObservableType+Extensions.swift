@@ -17,6 +17,7 @@ extension ObservableType {
      - parameter on: Action to invoke for each event in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
+    @discardableResult
     public func subscribe(_ on: @escaping (Event<Element>) -> Void) -> Disposable {
         let observer = AnonymousObserver { e in
             on(e)
