@@ -35,6 +35,7 @@ class NewCarPageViewController: UIViewController {
         self.view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Добавить новый"
+        self.hideKeyboardWhenTappedAround()
     }
     
     func configureDelegates() {
@@ -47,16 +48,6 @@ class NewCarPageViewController: UIViewController {
         textFields.forEach {
             $0.delegate = self
         }
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self,
-                                         action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
     
     func configureButtonActions() {

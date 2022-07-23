@@ -12,10 +12,17 @@ extension UITextField {
     func setupToolBar() {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
-        toolBar.isTranslucent = true
         toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(clickDone))
-        let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(clickDone)
+        )
+        let flexButton = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: self,
+            action: nil
+        )
         toolBar.setItems([flexButton, doneButton], animated: false)
         inputAccessoryView = toolBar
     }

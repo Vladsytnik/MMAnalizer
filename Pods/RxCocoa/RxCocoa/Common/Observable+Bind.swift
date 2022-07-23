@@ -30,6 +30,7 @@ extension ObservableType {
      - parameter observers: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
+    @discardableResult
     public func bind<Observer: ObserverType>(to observers: Observer...) -> Disposable where Observer.Element == Element? {
         self.map { $0 as Element? }
             .subscribe { event in
@@ -59,6 +60,7 @@ extension ObservableType {
     - parameter curriedArgument: Final argument passed to `binder` to finish binding process.
     - returns: Object representing subscription.
     */
+    @discardableResult
     public func bind<R1, R2>(to binder: (Self) -> (R1) -> R2, curriedArgument: R1) -> R2 {
         binder(self)(curriedArgument)
     }
